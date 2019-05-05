@@ -1,0 +1,136 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<br>
+<br>
+  {% if messages %}
+  <div class="alert alert-success small" style="width: 40%">
+      {% for message in messages %}
+      <h5{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h5>
+      {% endfor %}
+  </div>
+  {% endif %}
+  <h4 class="ml-5">See the reports here</h4>
+  <div class="row">
+    <h6 class="ml-5 mt-4"><a href="{% url 'users:report_list'  %}">Sort by area</a></h6>
+    <h6 class="ml-5 mt-4"><a href="{% url 'users:report_list_by_month'  %}">Sort by month</a></h6>
+  </div>
+<div class="content-section p-4">
+  <form method="POST" id="personForm" data-cities-url="{% url 'users:ajax_load_cities' %}" enctype="multipart/form-data">
+   {% csrf_token %}
+    <fieldset class="form-group pr-4">
+        <legend class="mb-4">Report Form</legend>
+
+            <div class="form-row">
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.area|as_crispy_field }}
+                  </div>
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.country|as_crispy_field }}
+                  </div>
+
+            </div>
+
+            <div class="form-row">
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.new_ministers|as_crispy_field }}
+                  </div>
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.dis_course|as_crispy_field }}
+                  </div>
+
+            </div>
+            <div class="form-row">
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.licenced_ministers|as_crispy_field }}
+                  </div>
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.upgrade_licence|as_crispy_field }}
+                  </div>
+
+            </div>
+            <div class="form-row">
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.preaching_place|as_crispy_field }}
+                  </div>
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.new_churches|as_crispy_field }}
+                  </div>
+
+            </div>
+            <div class="form-row">
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.water_baptism|as_crispy_field }}
+                  </div>
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.holy_ghost|as_crispy_field }}
+                  </div>
+
+            </div>
+            <div class="form-row">
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.constituents|as_crispy_field }}
+                  </div>
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.total_holy_ghost|as_crispy_field }}
+                  </div>
+
+            </div>
+            <div class="form-row">
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.total_baptized|as_crispy_field }}
+                  </div>
+
+            </div>
+            <div class="form-row">
+
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.author }}
+                    <p class="text-danger">If you choose wrong name, your info will not be saved</p>
+                  </div>
+
+            </div>
+
+
+    </fieldset>
+   <div class="form-group">
+     <button style="border-radius: 0; width: 200px; padding-left: 4px;" class="btn btn-info btn-block" type="submit">Submit</button>
+   </div>
+ </form>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  $("#id_area").change(function () {
+    var url = $("#personForm").attr("data-cities-url");
+    var areaId = $(this).val();
+
+    $.ajax({
+      url: url,
+      data: {
+        'area': areaId
+      },
+      success: function (data) {
+        $("#id_country").html(data);
+      }
+    });
+
+  });
+</script>
+
+{% endblock %}

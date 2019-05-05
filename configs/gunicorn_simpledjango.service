@@ -1,0 +1,26 @@
+[Unit]
+Description=gunicorn daemon for simpledjango project
+Requires=gunicorn_simpledjango.socket
+After=network.target
+
+[Service]
+PermissionsStartOnly=True
+User=scott
+Group=www-data
+RuntimeDirectory=gunicorn
+RuntimeDirectoryMode=0775
+PIDFile=/run/gunicorn/pid
+WorkingDirectory=/home/scott/locator
+ExecStart=/home/scott/locator/env/bin/gunicorn \
+          --access-logfile /home/scott/locator/logs/access.log \
+          --error-logfile /home/scott/locator/logs/error.log \
+          --pid /run/gunicorn/pid   \
+          --env DJANGO_SETTINGS_MODULE=main.settings_prod \
+          --workers 3 \
+          --bind unix:/run/gunicorn/simpledjango_socket main.wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

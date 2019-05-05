@@ -1,0 +1,12 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <br>
+    <div class="content-section mt-5 p-5  text-center">
+        <h1> You have been logged out!</h1><br>
+        <small class="text-muted"> <a href="{% url 'login'%}">Click here to login again.</a></small>
+    </div>
+
+{% endblock %}

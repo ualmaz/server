@@ -1,0 +1,609 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EME</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'users/vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'users/css/stylesheet.css' %}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'users/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="{% static 'users/vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'users/css/creative.min.css' %}" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static 'users/img/newupcifavicon.png' %}">
+
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav1" style="white-space: nowrap;">
+      <div class="container-fluid">
+        <a href="https://www.upci.org/home" target="_blank"><img align="left" src="{% static 'users/img/newheader1.png' %}" alt="UPCI" width="90" height="32"></a>&nbsp;
+        &nbsp;<a href="{% url 'users:home' %}#page-top" style="font-size: 16px; color: black;"><h6><span class="align-middle"><b>EME</b> Region</a></span></h6>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse drp-down-height-mobile" style="cursor: pointer" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <h6>Update &#9662;</h6>
+                    </a>
+                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                         <!-- <a class="dropdown-item" href="{% url 'users:report' %}"><h6>Report</h6></a> -->
+                         <a class="dropdown-item" href="{% url 'users:post-create' %}"><h6>Add Church</h6></a>
+                         <a class="dropdown-item" href="{% url 'users:cabinet' %}"><h6>Profile</h6></a>
+                         <a class="dropdown-item" target="_blank" href="https://docs.google.com/forms/d/1Bz85udkgeV2jU4KXZD11YHKbKsMI32EfDVjo4wx7YyI/edit?usp=sharing"><h6>Submit Event</h6></a>
+                       </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}"><h6>Log Out</h6></a>
+                    </li>
+                {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="{% url 'login' %}"><h6>Log In</h6></a>
+                  </li>
+              {% endif %}
+
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="{% url 'users:home' %}#about"><h6>About</h6></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="{% url 'users:home' %}#areas"><h6>Areas</h6></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="{% url 'users:home' %}#locate"><h6>Church Locator</h6></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="{% url 'users:home' %}#ministries"><h6>Ministries</h6></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="{% url 'users:home' %}#contact"><h6>Connect</h6></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" onclick="openNav()"><h6>Events</h6></a>
+                </li>
+            </ul>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Events Information -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <br>
+      <br>
+      <br>
+      <a href="{% static 'users/css/YearCalendar.pdf' %}" target="_blank">Full Year</a>
+      <a href="#" class="" onclick="openCal()">Calendar View</a>
+       <a href="{% static 'users/css/future.pdf' %}" target="_blank">Future</a>
+ <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
+<br><br>
+      <a href="#" class="" onclick="openJan()">January</a>
+      <a href="#" class="" onclick="openFeb()">February</a>
+      <a href="#" class="" onclick="openMar()">March</a>
+      <a href="#" class="" onclick="openApr()">April</a>
+      <a href="#" class="" onclick="openMay()">May</a>
+      <a href="#" class="" onclick="openJune()">June</a>
+      <a href="#" class="" onclick="openJuly()">July</a>
+      <a href="#" class="" onclick="openAug()">August</a>
+      <a href="#" class="" onclick="openSep()">September</a>
+      <a href="#" class="" onclick="openOct()">October</a>
+      <a href="#" class="" onclick="openNov()">November</a>
+      <a href="#" class="" onclick="openDec()">December</a>
+      <br>
+    </div>
+    <!-- Header for January -->
+    <!-- Header for January -->
+    <div id="January" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeJan()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">January</span></h1>
+    <!-- Dates for January -->
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2019</span></h4><br><br>
+    <p>
+    <span class="w3-text-light-grey">
+    22 - 24 Because of the Times: USA</span>
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2020</span></h4><br><br>
+    <p>
+    <span class="w3-text-light-grey">
+    21 - 23 Because of the Times: USA</span>
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2021</span></h4><br><br>
+    <p>
+    <span class="w3-text-light-grey">
+    19 - 21 Because of the Times: USA</span>
+    </div>
+    <!-- Header for February -->
+    <div id="February" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeFeb()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">February</span></h1>
+    <!-- Dates for February -->
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2019</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey"></span>
+    </div>
+    <!-- Header for March -->
+    <div id="March" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeMar()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">March</span></h1>
+    <!-- Dates for March -->
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2019</span></h4><br><br>
+    <P><span class="w3-text-light-grey">
+    <a href="http://www.emeladies.com" target="_blank">14 - 16 Ladies Conference: Athens, Greece</a><br>
+    23 - 25 LDI: Jerusalem, Israel<br><br>
+    26 - 29 Times of Refreshing: Jerusalem, Israel<br><br></span>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2020</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey">
+    16-20 ACRC
+    </span>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2021</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey">
+    22-26 ACRC
+    </span>
+    </div>
+    <!-- Header for April -->
+    <div id="April" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeApr()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">April</span></h1>
+    <!-- Dates for April -->
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2019</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey"></span>
+    </div>
+    <!-- Header for May -->
+    <div id="May" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeMay()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">May</span></h1>
+    <!-- Dates for May -->
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2019</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey">
+    2 - 6 Prayer Trip: Luxembourg City, Luxembourg<br><br>
+    20 - 24 ACRC: Lisbon, Portugal
+    </span>
+    </div>
+    <!-- Header for June -->
+    <div id="June" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeJune()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">June</span></h1>
+    <!-- Dates for June -->
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2019</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey">
+    18 - 20 Campus Ministries Seminar: Riga, Latvia
+    </span>
+    </div>
+    <!-- Header for July -->
+    <div id="July" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeJuly()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">July</span></h1>
+    <!-- Dates for July -->
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2019</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey">
+    <a href="https://northamericanyouthcongress.com/" target="_blank">Jul 31 - Aug 2 NAYC: USA</a>
+    </span>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2020</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey"></span>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2021</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey">
+    19-23 All Regional Conference: Budapest, Hungary
+    </span>
+    </div>
+    <!-- Header for August -->
+    <div id="August" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeAug()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">August</span></h1>
+    <!-- Dates for August -->
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2019</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey">
+    <a href="https://northamericanyouthcongress.com/" target="_blank">Jul 31 - Aug 2 NAYC: St. Louis, MO. USA</a>
+    </span>
+    </div>
+    <!-- Header for September -->
+    <div id="September" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeSep()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">September</span></h1>
+    <!-- Dates for September -->
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2019</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey">
+    12 - 14 EME Prayer Conference: Amman, Jordan<br><br>
+    <a href="http://www.upcigc.net/" target="_blank">24 - 27 General Conference: Indianapolis, IN. </a><br>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2020</span></h4><br><br>
+    <p>
+    <span class="w3-text-light-grey">
+    22 - 25 General Conference: St. Louis, MO.
+    </span>
+    </div>
+    <!-- Header for October -->
+    <div id="October" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeOct()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">October</span></h1>
+    <!-- Dates for October -->
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2019</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey"></span>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2020</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey"></span>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2021</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey">
+    5-8 General Conference: Indianapolis, IN.
+    </span>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2022</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey">
+    4-7 General Conference: Orlando, FL.
+    </span>
+    </div>
+    <!-- Header for November -->
+    <div id="November" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeNov()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">November</span></h1>
+    <!-- Dates for November -->
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2019</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey">
+    11-13 CRS: Johannesburg, South Africa
+    </span>
+    </div>
+    <!-- Header for December -->
+    <div id="December" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeDec()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">December</span></h1>
+    <!-- Dates for December -->
+    <br>
+    <p>
+    <h4 class="w3-xlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">2019</span></h4><br><br>
+    <p>
+    <!-- Dates Go BELOW HERE between the span tags -->
+    <span class="w3-text-light-grey"></span>
+    </div>
+    <!-- Google Calendar Embed -->
+    <div id="Calendar" class="sidenav1">
+    <a href="javascript:void(0)" class="closebtn1" onclick="closeCal()">&times;</a>
+    <h1 class="w3-xxlarge"><span class="w3-text-white w3-left w3-border-bottom w3-border-light-grey w3-padding-small">EME UPCI Calendar</span></h4><br><br><br>
+    <div align="center"><br>
+      <iframe class="hidden-sm-down hidden-md-down" src="https://calendar.google.com/calendar/b/3/embed?showPrint=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=emeupci%40gmail.com&amp;color=%231B887A&amp;ctz=Europe%2FParis" style="border-width:0" width="90%" height="400" frameborder="0" scrolling="no"></iframe>
+      <iframe class="hidden-sm-up hidden-md-up" src="https://calendar.google.com/calendar/b/3/embed?showPrint=0&amp;showTabs=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=emeupci%40gmail.com&amp;color=%231B887A&amp;ctz=Europe%2FParis" style="border-width:0" width="90%" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+    </div>
+
+        </div>
+    </div>
+
+{% block content %}
+
+{% endblock %}
+
+<script src="{% static 'users/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'users/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Plugin JavaScript -->
+<script src="{% static 'users/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+<script src="{% static 'users/vendor/scrollreveal/scrollreveal.min.js' %}"></script>
+<script src="{% static 'users/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+<!-- Custom scripts for this template -->
+<script src="{% static 'users/js/creative.js' %}"></script>
+
+<script>
+function openNav() {
+document.getElementById("mySidenav").style.width = "250px";
+document.getElementById("main").style.marginLeft = "250px";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+document.getElementById("mySidenav").style.width = "0px";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- Script for January -->
+<script>
+function openJan() {
+document.getElementById("January").style.width = "450px";
+document.getElementById("main").style.marginLeft = "450px";
+document.body.style.backgroundColor = "rgba(58,114,217,1)";
+}
+
+function closeJan() {
+document.getElementById("January").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- Script for February -->
+<script>
+function openFeb() {
+document.getElementById("February").style.width = "450px";
+document.getElementById("main").style.marginLeft = "450px";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeFeb() {
+document.getElementById("February").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- Script for March -->
+<script>
+function openMar() {
+document.getElementById("March").style.width = "450px";
+document.getElementById("main").style.marginLeft = "450px";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeMar() {
+document.getElementById("March").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- Script for April -->
+<script>
+function openApr() {
+document.getElementById("April").style.width = "450px";
+document.getElementById("main").style.marginLeft = "450px";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeApr() {
+document.getElementById("April").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- Script for May -->
+<script>
+function openMay() {
+document.getElementById("May").style.width = "450px";
+document.getElementById("main").style.marginLeft = "450px";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeMay() {
+document.getElementById("May").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- Script for June -->
+<script>
+function openJune() {
+document.getElementById("June").style.width = "450px";
+document.getElementById("main").style.marginLeft = "450px";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeJune() {
+document.getElementById("June").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- Script for July -->
+<script>
+function openJuly() {
+document.getElementById("July").style.width = "450px";
+document.getElementById("main").style.marginLeft = "450px";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeJuly() {
+document.getElementById("July").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- Script for August -->
+<script>
+function openAug() {
+document.getElementById("August").style.width = "450px";
+document.getElementById("main").style.marginLeft = "450px";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeAug() {
+document.getElementById("August").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- Script for September -->
+<script>
+function openSep() {
+document.getElementById("September").style.width = "450px";
+document.getElementById("main").style.marginLeft = "450px";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeSep() {
+document.getElementById("September").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- Script for October -->
+<script>
+function openOct() {
+document.getElementById("October").style.width = "450px";
+document.getElementById("main").style.marginLeft = "450px";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeOct() {
+document.getElementById("October").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!--Script for November -->
+<script>
+function openNov() {
+document.getElementById("November").style.width = "450px";
+document.getElementById("main").style.marginLeft = "450px";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNov() {
+document.getElementById("November").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- Script for December -->
+<script>
+function openDec() {
+document.getElementById("December").style.width = "450px";
+document.getElementById("main").style.marginLeft = "450px";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeDec() {
+document.getElementById("December").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- Script for Calendar tab -->
+<script>
+function openCal() {
+document.getElementById("Calendar").style.width = "100%";
+document.getElementById("main").style.marginLeft = "100%";
+document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeCal() {
+document.getElementById("Calendar").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+document.body.style.backgroundColor = "white";
+}
+</script>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+$(document).on('click',function(){
+	$('.navbar-collapse').collapse('hide');
+})
+</script>
+
+</body>
+
+</html>

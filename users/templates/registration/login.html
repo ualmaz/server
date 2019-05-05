@@ -1,0 +1,61 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<div class="content-section mt-5 pl-4 p-5">
+
+  {% if form.errors %}
+      <p class="alert alert-danger small" style="width: 40%">Your username or password didn't match. Please try again.</p>
+  {% endif %}
+
+  {% if messages %}
+  <div class="alert alert-success small" style="width: 40%">
+      {% for message in messages %}
+      <h5{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h5>
+      {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if next %}
+      {% if user.is_authenticated %}
+      <p class="alert alert-success small" style="width: 40%">Your account doesn't have access to this page. To proceed,
+      please login with an account that has access.</p>
+      {% else %}
+      <p class="alert alert-success small" style="width: 40%">Please login to see this page.</p>
+      {% endif %}
+  {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+
+      <fieldset class="form-group">
+        <legend class="mb-4">Log In</legend>
+          <div class="form-row">
+          <div class="form-group col-md-3 mb-0">
+            {{ form.username|as_crispy_field }}
+          </div>
+          </div>
+          <div class="form-row">
+          <div class="form-group col-md-3 mb-0">
+            {{ form.password|as_crispy_field }}
+          </div>
+          </div>
+          </fieldset>
+      <div class="form-group">
+        <button style="border-radius: 0; width: 200px; padding-left: 4px;" class="btn btn-info btn-block" type="submit">Log In</button>
+      </div>
+    </form>
+    <div class="border-top pt-3">
+      <small class="text-muted">
+        Need An Account? <a class="ml-2" href="{% url 'users:register' %}">Sign Up Now</a><br>
+        Lost Password? <a href="{% url 'password_reset' %}">Restore Password</a>
+      </small>
+    </div>
+    </div>
+      </div>
+
+</div>
+
+{% endblock %}

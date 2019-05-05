@@ -1,0 +1,46 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<br>
+<br>
+<div class="conteiner-fluid row ml-2 ml-4">
+
+{% for post in posts %}
+
+<div class="card small d-flex p-2 col-sm-2.5 ml-2 mb-2" style="background-color: #f2f3f4;">
+    <div class="card-body" style="card-text: break-word">
+    <p class="card-text font-weight-bold mb-3 text-uppercase"">Church name: <a href="{% url 'users:post-detail' post.pk %}">{{ post.name }}</a></p>
+    <p class="card-text" style="width: 250px">Country: {{post.country}}.</p>
+    <p class="card-text">City: {{post.city}}.</p>
+    <p class="card-text">Address: {{post.address}}.</p>
+    <p class="card-text">Email: {{post.email}}.</p>
+    <p class="card-text">Phone: {{post.phone}}.</p>
+    <p class="card-text">Website: <a href="{{post.website}}">{{post.website}}</a></p>
+    {% if post.social %}
+      <p class="card-text">Social Media: <a href="{{post.social}}">{{post.social}}</a></p>
+    {% else %}
+      <p class="card-text">Social Media: No link was provided </p>
+    {% endif %}
+    <p class="card-text text-muted" style="width: 350px">Added by: <a href="{% url 'users:cabinet' %}">{{post.author.first_name}} {{post.author.last_name}}</a> <br> on {{post.date_posted|date:"F d, Y"}}.</p>
+    </div>
+</div>
+
+{% empty %}
+
+<div class="well well-lg bordered" style="background-color: #F7EDED; padding: 200px; ">
+
+<h2 class="text-center small">You don't have any churches yet. <br>Please click <a href="{% url 'users:post-create' %}">"Add Church"</a> to create one. </h2>
+
+</div>
+{% endfor %}
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,260 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<!-- Header -->
+<div align="center">
+    <header class="masthead text-center text-white d-flex" style="max-width:83.3333%;">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-12 mx-auto">
+           <span style="font-size: 42px; opacity: 0.7; background-color: black; "><b class="mr-3 ml-3" style="color: white"><font face="Verdana">EME</font></b></span>
+           <span style="font-size: 42px; opacity: 0.7; background-color: white"><b class="mr-3 ml-3" style="color: black"><font face="Verdana">Region</font></b></span>
+          </div>
+          </div>
+      </div>
+    </header>
+</div>
+    <section class="border-bottom" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mx-auto text-left">
+            <h3 class="section-heading">Europe & the Middle East</h3>
+            <p class="mb-4"><p>The Europe and Middle East Region spans the EurAsian Continent; from the picturesque streets of Lisbon in the west to the breathtaking wilderness of Kamchatka in Russia's far east. The divirsity of landscapes is eclipsed only by the diversity of people groups. There is one unifying truth; everyone, everywhere has need of a Savior. This is the mission of the Europe and Middle East United Pentecostal Church: to share the good news of a powerful Savior.
+            <br><br>
+            <div class=" col-sm-12 mx-auto text-right">- Capturing the hearts of mankind and Cities for Christ.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-bottom" id="areas">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-left">
+              <h3 class="section-heading">Areas</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 text-centerrr">
+              <div class="service-box mt-2 mx-auto">
+                <h5 class="mb-3">Northern Europe</h5>
+                <img class="img-area" src="{% static 'users/img/iceland3edit.jpg' %}" alt="Northern Europe" style="width:100%">
+                <div class="middle">
+                  {% for north_eu in north_eu %}
+                  <a href="{% url 'users:cities' north_eu.pk %}"><div class="text">{{north_eu.country }}</div></a>
+                  {% endfor %}
+              </div>
+              </div>
+            </div>
+            <div class="col-md-4 text-centerrr">
+              <div class="service-box mt-2 mx-auto">
+                <h5 class="mb-3">Western Europe</h5>
+                <img class="img-area" src="{% static 'users/img/franceedit.jpg' %}" alt="Western Europe" style="width:100%">
+                <div class="middle">
+                  {% for west_eu in west_eu %}
+                  <a href="{% url 'users:cities' west_eu.pk %}"><div class="text">{{west_eu.country }}</div></a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 text-centerrr">
+              <div class="service-box mt-2 mx-auto">
+                <h5 class="mb-3">Eastern Europe</h5>
+                <img class="img-area" src="{% static 'users/img/hungaryedit.jpg' %}" alt="Eastern Europe" style="width:100%">
+                <div class="middle">
+                  {% for east_eu in east_eu %}
+                  <a href="{% url 'users:cities' east_eu.pk %}"><div class="text">{{east_eu.country }}</div></a>
+                  {% endfor %}
+                </div>
+
+              </div>
+            </div>
+            <div class="col-md-4 text-centerrr">
+              <div class="service-box mt-2 mx-auto">
+                <h5 class="mb-3">CIS & Baltic States</h5>
+                <img class="img-area" src="{% static 'users/img/latviaedit.jpg' %}" alt="CIS" style="width:100%">
+                <div class="middle">
+                  {% for baltic in baltic %}
+                  <a href="{% url 'users:cities' baltic.pk %}"><div class="text">{{baltic.country }}</div></a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 text-centerrr">
+              <div class="service-box mt-2 mx-auto">
+                <h5 class="mb-3">Middle East & Gulf States</h5>
+                <img class="img-area" src="{% static 'users/img/dubai4edit.jpg' %}" alt="Middle East" style="width:100%">
+                <div class="middle">
+                  {% for middle_e in middle_e %}
+                  <a href="{% url 'users:cities' middle_e.pk %}"><div class="text">{{middle_e.country }}</div></a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 text-centerrr">
+              <div class="service-box mt-2 mx-auto">
+                <h5 class="mb-3">North Africa & Mediterranean</h5>
+                <img class="img-area" src="{% static 'users/img/NaMededit.jpg' %}" alt="Eastern Europe" style="width:100%">
+                <div class="middle">
+                  {% for africa in africa %}
+                  <a href="{% url 'users:cities' africa.pk %}"><div class="text">{{africa.country }}</div></a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+
+
+      <section class="border-bottom" id="locate">
+        <div class="container">
+                <div class="row">
+                  <div class="col-lg-12 mx-auto text-left">
+                    <h3 class="section-heading">Locate a Church!</h3>
+                    <br>
+                    <p class="mb-5">There are fantastic, Spirit lead, Holy Ghost filled churches all across the EME Region.  Find one near you! </p>
+                  </div>
+                </div>
+                  <div class="container-fluid headerimage">
+                    <div class="child1">
+                    </div>
+                    <div class="child2">
+                      <div class="dropdown show">
+                        <a class="btn btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                           style="border-radius: 4px;
+                           background-color: #f9f7f7;
+                           color: black;
+                           border: 1px solid #aaa9a9;
+                           padding-top: 10px;
+                           padding-bottom: 10px;
+                           position: relative;">
+                           Country .. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </a>
+
+                        <div id="myDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <input class="input-dropdown" type="text" style="width: 250px;" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                          {% for country in country %}
+                          <a class="dropdown-item" href="{% url 'users:cities' country.pk %}">{{country.country}}</a>
+                          {% endfor %}
+                        </div>
+                      </div>
+
+                  <div class="child3">
+                  </div>
+                  </div>
+
+     </section>
+
+             <section class="border-bottom" id="ministries">
+               <div class="container">
+                 <div class="row">
+                   <div class="col-lg-12 text-left">
+                     <h3 class="section-heading mb-5">Ministries</h3>
+                   </div>
+                 </div>
+               </div>
+
+               <div class="container">
+                 <div class="row">
+                   <div class="col-lg-3 col-md-6 text-center"  style="height: 320px;">
+                     <div class="service-box mx-auto">
+                       <a href="http://www.campusnow.org/home" target="_blank"><img src="{% static 'users/img/campus.png' %}" alt="campus" align="right" class="img-fluid mb-3 img-fade pb-2"></a>
+                        <!-- <h3 class="text-left"><a class="ministries-link" href="http://www.campusnow.org/home">Campus</a></h3> -->
+                        <!-- <p class="text-left text-muted">For College <br>Students</p> -->
+                        <p class="text-left ml-1">Giving students something that can't be found in textbooks! This ministry is specific to College Campuses.</p>
+                        <!-- <p><a href="http://www.campusnow.org/home" class="btn btn-info btn-block" style="background-color: #ccc8c7; border-radius: 0;" target="_blank">More Information</a></p> -->
+                     </div>
+                   </div>
+                   <div class="col-lg-3 col-md-6 text-center"  style="height: 320px;">
+                     <div class="service-box mx-auto">
+                       <a href="#"><img src="{% static 'users/img/children.png' %}" alt="children" align="right" class="img-fluid mb-3 img-fade pb-2"></a>
+                        <!-- <h3 class="text-left"><a class="ministries-link" href="#">Child</a></h3> -->
+                        <!-- <p class="text-left text-muted">Energy and <br>Creativity</p> -->
+                        <p class="text-left ml-1">Resources are available to help you develop an effective children's ministry wherever you are. We can help!</p>
+                        <!-- <p><a href="#" class="btn btn-info btn-block" style="background-color: #ccc8c7; border-radius: 0;" target="_blank">More Information</a></p> -->
+                     </div>
+                   </div>
+                   <div class="col-lg-3 col-md-6 text-center"  style="height: 320px;">
+                     <div class="service-box mx-auto">
+                       <a href="http://eurosoulwinners.com/ESW2018/" target="_blank"><img src="{% static 'users/img/evangelism.png' %}" alt="campus"  align="right" class="img-fluid mb-3 img-fade pb-2"></a>
+                        <!-- <h3 class="text-left"><a class="ministries-link" href="http://eurosoulwinners.com/ESW2018/"> Evang</a></h3> -->
+                        <!-- <p class="text-left text-muted" style="white-space: nowrap;">You are a <br>Soul Winner</p> -->
+                        <p class="text-left ml-1">Europe has 831,400,000 souls that need Christ. With the EU opening up to people of all ethnic, cultural & religious backgrounds, there is no greater time than right now to “Enter the Harvest!</p>
+                        <!-- <p><a href="http://eurosoulwinners.com/ESW2018/" class="btn btn-info btn-block" style="background-color: #ccc8c7; border-radius: 0;" target="_blank">More Information</a></p> -->
+                     </div>
+                   </div>
+                   <div class="col-lg-3 col-md-6 text-center"  style="height: 320px;">
+                     <div class="service-box mx-auto">
+                       <a href="#"><img src="{% static 'users/img/men.png' %}" alt="campus" align="right" class="img-fluid mb-3 img-fade pb-2"></a>
+                        <!-- <h3 class="text-left"><a class="ministries-link" href="#">Men</a></h3> -->
+                        <!-- <p class="text-left text-muted" style="white-space: nowrap;">Ministry for <br>Men</p> -->
+                        <p  class="text-left ml-1">Fellowship, Camaraderie, Friendship, and Encouragement!</p>
+                        <!-- <p><a href="#" class="btn btn-info btn-block" style="background-color: #ccc8c7; border-radius: 0;" target="_blank">More Information</a></p> -->
+                     </div>
+                   </div>
+                   <div class="col-lg-3 col-md-6 text-center"  style="height: 320px;">
+                     <div class="service-box mx-auto">
+                       <a href="https://www.facebook.com/upcimilitarychaplains/" target="_blank"><img  src="{% static 'users/img/military.png' %}" alt="military" align="right" class="img-fluid mb-3 img-fade pb-2"></a>
+                        <!-- <h3 class="text-left"><a class="ministries-link" href="https://www.facebook.com/upcimilitarychaplains/">Milita</a></h3> -->
+                        <!-- <p class="text-left text-muted">Serving those <br>who Serve</p> -->
+                        <p  class="text-left ml-1">Points of connection and fellowship for those serving abroad.</p>
+                        <br>
+                        <!-- <p><a href="https://www.facebook.com/upcimilitarychaplains/" class="btn btn-info btn-block" style="background-color: #ccc8c7; border-radius: 0;" target="_blank">More Information</a></p> -->
+                     </div>
+                   </div>
+                   <div class="col-lg-3 col-md-6 text-center"  style="height: 320px;">
+                     <div class="service-box mx-auto">
+                       <a href="https://www.facebook.com/EMELadies/" target="_blank"><img src="{% static 'users/img/ladies.png' %}" alt="ladies" align="right" class="img-fluid mb-3 img-fade pb-2"></a>
+                        <!-- <h3 class="text-left"><a class="ministries-link" href="https://www.facebook.com/EMELadies/">Ladies</a></h3> -->
+                        <!-- <p class="text-left text-muted">Ministry specific <br>to Ladies</p> -->
+                        <p  class="text-left ml-1">Powerful ministry by Ladies for Ladies!</p>
+                        <br>
+                        <!-- <p><a href="https://www.facebook.com/EMELadies/" class="btn btn-info btn-block" style="background-color: #ccc8c7; border-radius: 0;" target="_blank">More Information</a></p> -->
+                     </div>
+                   </div>
+                   <div class="col-lg-3 col-md-6 text-center"  style="height: 320px;">
+                     <div class="service-box mx-auto">
+                       <a href="http://www.globaltracts.com" target="_blank"><img src="{% static 'users/img/literature.png' %}" alt="campus" align="right" class="img-fluid mb-3 img-fade pb-2"></a>
+                        <!-- <h3 class="text-left"><a href="http://www.globaltracts.com" class="ministries-link">Liter</a></h3> -->
+                        <!-- <p class="text-left text-muted">Getting the <br> word out</p> -->
+                        <p  class="text-left ml-1">Just as we are diverse geographically, ethnically, and culturally we are also diverse linguistically. This ministry is devoted to an ever expanding repository of information in various languages.</p>
+
+                        <!-- <p><a href="http://www.globaltracts.com" class="btn btn-info btn-block" style="background-color: #ccc8c7; border-radius: 0;" target="_blank">More Information</a></p> -->
+                     </div>
+                   </div>
+                   <div class="col-lg-3 col-md-6 text-center"  style="height: 320px;">
+                     <div class="service-box mx-auto">
+                       <a href="http://www.emeyouth.com" target="_blank"><img src="{% static 'users/img/youth.png' %}" alt="campus" align="right" class="img-fluid mb-3 img-fade pb-2"></a>
+                        <!-- <h3 class="text-left"><a href="http://www.emeyouth.com" class="ministries-link">Youth</a></h3> -->
+                        <!-- <p class="text-left text-muted">For those <br>under 25</p> -->
+                        <p  class="text-left ml-1">This world does not need more young people to sell out... this generation needs more like Joshua, Esther, Caleb, and Ruth! EME Youth Ministry is devoted to empowering this generation.</p>
+                        <!-- <p><a href="http://www.emeyouth.com" class="btn btn-info btn-block" style="background-color: #ccc8c7; border-radius: 0;" target="_blank">More Information</a></p> -->
+                     </div>
+                   </div>
+             </section>
+
+
+           <section id="contact">
+             <div class="container">
+               <div class="row">
+                 <div class="col-lg-12 mx-auto text-left">
+                   <h3 class="section-heading">Connect</h3>
+                    <br>
+                     <br>
+                     {% include 'users/social_buttons.html' %}
+                        <br><br><br><br><br><br><br><br><br><br>
+                 </div>
+               </div>
+
+             </div>
+           </section>
+
+
+
+
+{% endblock %}

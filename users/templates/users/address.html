@@ -1,0 +1,27 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<br>
+<h1 class="text-center text-uppercase p-3 mt-5">{{ city }}</h1>
+
+<div class="conteiner-fluid row ml-2 ml-4">
+
+{% for church in address %}
+
+<div class="card small d-flex p-2 col-sm-2.5 ml-2 mb-2" style="background-color: #f2f3f4;">
+    <div class="card-body" style="card-text: break-word">
+    <p class="card-text font-weight-bold mb-3 text-uppercase"">Church name: <a href="{% url 'users:post-detail' church.pk %}">{{ church.name }}</a></p>
+    <p class="card-text" style="width: 250px">Address: {{church.address}}.</p>
+    <p class="card-text">Email: {{church.email}}.</p>
+    <p class="card-text">Phone: {{church.phone}}.</p>
+    <p class="card-text">Website: <a href="{{church.website}}">{{church.website}}</a></p>
+    <p class="card-text text-muted" style="width: 350px">Added on: <a href="{% url 'users:cabinet' %}"></a> {{church.date_posted|date:"F d, Y"}}.</p>
+    <p class="card-text text-muted" style="width: 350px">Added by: {{church.author.first_name}} {{church.author.last_name}}</p>
+    </div>
+</div>
+
+{% endfor %}
+{% endblock %}
+
+</div>

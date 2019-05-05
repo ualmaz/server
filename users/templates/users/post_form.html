@@ -1,0 +1,84 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="content-section mt-5 pl-5 p-4">
+  <form method="post" id="personForm" data-cities-url="{% url 'users:ajax_load_cities' %}" novalidate>
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="mb-4">Church Info</legend>
+      <div class="form-row">
+        <div class="form-group col-md-3 small">
+          {{ form.area|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-3 small">
+          {{ form.country|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3 small">
+          {{ form.name|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-3 small">
+          {{ form.city|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3 small">
+          {{ form.email|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-3 small">
+          {{ form.website|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6 small">
+          {{form.social|as_crispy_field}}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3 small">
+          {{ form.address|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-3 small">
+          {{ form.phone|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3 small">
+          {{ form.author|as_crispy_field }}
+        </div>
+
+      </div>
+
+        <button style="border-radius: 0; width: 200px; padding-left: 4px;" class="btn btn-info btn-block" type="submit">Submit</button>
+      </div>
+    </form>
+
+    <div class="border-top pt-3">
+      <small class="text-muted">
+        Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+      </small>
+    </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_area").change(function () {
+      var url = $("#personForm").attr("data-cities-url");
+      var areaId = $(this).val();
+
+      $.ajax({
+        url: url,
+        data: {
+          'area': areaId
+        },
+        success: function (data) {
+          $("#id_country").html(data);
+        }
+      });
+
+    });
+  </script>
+
+{% endblock %}

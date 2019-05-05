@@ -1,0 +1,31 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="content-section mt-5 pl-5 p-4">
+  <form method="post">
+    {% csrf_token %}
+    <fieldset class="form-group pr-4" style="width: 1500px;">
+      <legend class="mb-4">Delete</legend>
+      <h2>Are you sure you want to delete "{{ object.title }}"</h2>
+      <div class="form-row">
+        <div class="form-group col-md-3 mb-0">
+        </div>
+
+    </fieldset>
+    <div class="form-group">
+      <button
+        style="border-radius: 0;
+               width: 200px;
+               padding-left: 4px;"
+        class="btn btn-danger btn-block"
+        type="submit">Yes, Delete
+    </button>
+    <a style="border-radius: 0; width: 200px; padding-left: 4px;" class="btn btn-secondary btn-block" href="{% url 'users:post-detail' object.id %}" >  Cancel </a>
+
+
+    </div>
+  </form>
+
+{% endblock %}

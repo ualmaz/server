@@ -1,0 +1,33 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="content-section p-5 mt-5 pl-4">
+
+<p style="font-size: 30px;" class="text-center mt-4"> {{ country }}<p>
+
+
+{% if country in access_challenge_country %}
+
+      <p class="text-center small col-sm-12 mt-5 text-info"> In order to get info about this country contact </p>
+      <p class="text-center text-uppercase"><strong>emeupci@protonmail.com</strong</p>
+      <div class="text-center mt-4" style="font-size: 60px;"><i class="far fa-hand-point-up center"></i></div>
+
+{% else %}
+
+      {% for city in cities %}
+      <table class="table table-hover text-left col-sm-12" style="table-layout: fixed; word-wrap: break-word;">
+         <tbody>
+          <tr>
+           <td><a class="text-uppercase" href="{% url 'users:address' city.pk %}">{{ city.city }}</a></td>
+          </tr>
+         </tbody>
+        </table>
+      {% endfor %}
+
+{% endif %}
+
+</div>
+
+{% endblock %}

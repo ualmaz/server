@@ -1,0 +1,22 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="ml-4">
+
+  <h1>Report Countries</h1>
+<br>
+
+  {% for month in month %}
+  <p><a href="#">{{month}}</a></p>
+  {% endfor %}
+{% endblock %}
+
+</div>

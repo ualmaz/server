@@ -1,0 +1,51 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+
+<div class="card small d-flex p-2 col-sm-2.5 ml-2 mb-2" style="background-color: #f2f3f4;">
+    <div class="card-body" style="card-text: break-word">
+    <p class="card-text font-weight-bold mb-3 text-uppercase">Church name: <a href="{% url 'users:post-detail' church.pk %}">{{ post.name }}</a></p>
+    <p class="card-text">Country: {{ post.country }}</p>
+    <p class="card-text">City: {{ post.city }}</p>
+    <p class="card-text">Address: {{ post.address }}</p>
+    <p class="card-text">Email: {{post.email}}.</p>
+    <p class="card-text">Phone: {{post.phone}}.</p>
+    <p class="card-text">Website: <a href="{{church.website}}">{{post.website}}</a></p>
+    <p class="card-text text-muted" style="width: 350px">Added on: <a href="{% url 'users:cabinet' %}"></a> {{post.date_posted|date:"F d, Y"}}.</p>
+    <p class="card-text text-muted" style="width: 350px">Added by: {{post.author.first_name}} {{post.author.last_name}}</p>
+    </div>
+</div>
+
+
+
+{% block content %}
+<br>
+<div class="conteiner-fluid ml-2 ml-4" style=" width: 380px;">
+<h1 class="pd-header text-center text-uppercase p-3 mt-5" style="font-size: 35px;">{{ post.name }}</h1>
+
+<div class="card small d-flex p-2 col-sm-2.5 ml-2 mb-2" style="background-color: #f2f3f4;">
+    <div class="card-body" style="card-text: break-word">
+    <p class="card-text font-weight-bold mb-3 text-uppercase">Church name: {{ post.name }}</p>
+    <p class="card-text">Country: {{ post.country }}</p>
+    <p class="card-text">City: {{ post.city }}</p>
+    <p class="card-text">Address: {{ post.address }}</p>
+    <p class="card-text">Email: {{post.email}}.</p>
+    <p class="card-text">Phone: {{post.phone}}.</p>
+    <p class="card-text">Website: <a href="{{church.website}}">{{post.website}}</a></p>
+    <p class="card-text text-muted" style="width: 350px">Added on: <a href="{% url 'users:cabinet' %}"></a> {{post.date_posted|date:"F d, Y"}}.</p>
+    <p class="card-text text-muted" style="width: 350px">Added by: {{post.author.first_name}} {{post.author.last_name}}</p>
+    </div>
+</div>
+
+
+</div>
+<div class="container row mt-2 ml-4">
+
+{% if post.author == user %}
+  <a style="border-radius: 0; width: 100px; padding-left: 5px;" class="btn btn-secondary btn-block ml-5 mt-1 mb-1" href="{% url 'users:post-update' object.pk %}">Update</a>
+  <a style="border-radius: 0; width: 100px; padding-left: 5px;" class="btn btn-danger btn-block ml-5 mt-1 mb-1" href="{% url 'users:post-delete' object.pk %}">Delete</a>
+{% endif %}
+</div>
+
+</div>
+
+{% endblock %}

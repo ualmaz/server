@@ -1,0 +1,30 @@
+{% extends 'shared/base.html' %} {% load staticfiles %} {% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+
+<h4 class="text-center m-4 p-4">See the reports</h4>
+
+      <div class="dropdown" align="center">
+         <button  onclick="myFunction()"
+                  class="dropbtn dropdown-toggle"
+                  style=" border: 26px solid #a8abaf;
+                       cursor: pointer;
+                       font-weight: bold; background-color: #447193;
+                       color: white; padding: 8px; border-radius: 0px;
+                       font-size: 16px;);">Sort by month
+         </button>
+       </div>
+      <div id="myDropdown" class="dropdown-content">
+          <input type="text" style="width: 238px;" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+          {% for month in month %}
+            <a href="{% url 'users:report_countries' month.pk%}">{{month.month|date:"Y"}}</a>
+          {% endfor %}
+      </div>
+
+</div>
+
+{% endblock %}
