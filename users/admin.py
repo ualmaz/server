@@ -8,3 +8,6 @@ admin.site.register(Country)
 admin.site.register(Post)
 admin.site.register(Profile)
 admin.site.register(Report)
+
+admin.site.site_header = 'Welcome World Changer!'
+
