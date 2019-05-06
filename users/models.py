@@ -10,7 +10,7 @@ from django.core.mail import send_mail
 from django.utils.dates import MONTHS
 from datetime import date
 
-True
+
 class User(AbstractUser):
     first_name = models.CharField(verbose_name="First name", max_length=255)
     last_name = models.CharField(verbose_name="Last name", max_length=255)
@@ -93,7 +93,7 @@ class Post(models.Model):
     city = models.CharField(max_length=255, null=True)
     address = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
-    social = models.URLField(max_length=255, blank=True)
+    social = models.URLField(max_length=255, blank=True, null=True)
     phone = models.CharField(max_length=255)
     website = models.URLField(max_length=255, blank=True)
     date_posted = models.DateField(default=timezone.now)
