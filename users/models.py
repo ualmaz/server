@@ -74,6 +74,9 @@ post_save.connect(create_profile, sender=User)
 class Area(models.Model):
     name = models.CharField(max_length=30)
 
+    class Meta:
+        ordering = ["name"]
+
     def __str__(self):
         return self.name
 
@@ -82,6 +85,10 @@ class Country(models.Model):
     area = models.ForeignKey(Area, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     access_challenge = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name_plural = "  Countries"
+        ordering = ["name"]
 
     def __str__(self):
         return self.name

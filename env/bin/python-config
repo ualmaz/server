@@ -1,4 +1,4 @@
-#!/home/kazak/projects/test_projects/locator/env/bin/python
+#!/home/scott/locator/env/bin/python
 
 import sys
 import getopt

@@ -1,0 +1,83 @@
+[2019-05-06 04:55:01 +0000] [10771] [INFO] Starting gunicorn 19.9.0
+[2019-05-06 04:55:01 +0000] [10771] [INFO] Listening at: unix:/run/gunicorn/simpledjango_socket (10771)
+[2019-05-06 04:55:01 +0000] [10771] [INFO] Using worker: sync
+[2019-05-06 04:55:01 +0000] [10788] [INFO] Booting worker with pid: 10788
+[2019-05-06 04:55:02 +0000] [10791] [INFO] Booting worker with pid: 10791
+[2019-05-06 04:55:02 +0000] [10792] [INFO] Booting worker with pid: 10792
+[2019-05-06 04:56:26 +0000] [10771] [INFO] Handling signal: term
+[2019-05-06 04:56:26 +0000] [10788] [INFO] Worker exiting (pid: 10788)
+[2019-05-06 04:56:26 +0000] [10791] [INFO] Worker exiting (pid: 10791)
+[2019-05-06 04:56:26 +0000] [10792] [INFO] Worker exiting (pid: 10792)
+[2019-05-06 04:56:26 +0000] [10771] [INFO] Shutting down: Master
+[2019-05-06 04:57:43 +0000] [10852] [INFO] Starting gunicorn 19.9.0
+[2019-05-06 04:57:43 +0000] [10852] [INFO] Listening at: unix:/run/gunicorn/simpledjango_socket (10852)
+[2019-05-06 04:57:43 +0000] [10852] [INFO] Using worker: sync
+[2019-05-06 04:57:43 +0000] [10872] [INFO] Booting worker with pid: 10872
+[2019-05-06 04:57:43 +0000] [10875] [INFO] Booting worker with pid: 10875
+[2019-05-06 04:57:43 +0000] [10876] [INFO] Booting worker with pid: 10876
+[2019-05-06 05:50:51 +0000] [10852] [INFO] Handling signal: term
+[2019-05-06 05:50:51 +0000] [10872] [INFO] Worker exiting (pid: 10872)
+[2019-05-06 05:50:51 +0000] [10875] [INFO] Worker exiting (pid: 10875)
+[2019-05-06 05:50:51 +0000] [10876] [INFO] Worker exiting (pid: 10876)
+[2019-05-06 05:50:51 +0000] [10852] [INFO] Shutting down: Master
+[2019-05-06 05:51:33 +0000] [11323] [INFO] Starting gunicorn 19.9.0
+[2019-05-06 05:51:33 +0000] [11323] [INFO] Listening at: unix:/run/gunicorn/simpledjango_socket (11323)
+[2019-05-06 05:51:33 +0000] [11323] [INFO] Using worker: sync
+[2019-05-06 05:51:33 +0000] [11342] [INFO] Booting worker with pid: 11342
+[2019-05-06 05:51:33 +0000] [11344] [INFO] Booting worker with pid: 11344
+[2019-05-06 05:51:33 +0000] [11346] [INFO] Booting worker with pid: 11346
+[2019-05-06 05:59:12 +0000] [11323] [INFO] Handling signal: term
+[2019-05-06 05:59:12 +0000] [11342] [INFO] Worker exiting (pid: 11342)
+[2019-05-06 05:59:12 +0000] [11344] [INFO] Worker exiting (pid: 11344)
+[2019-05-06 05:59:13 +0000] [11346] [INFO] Worker exiting (pid: 11346)
+[2019-05-06 05:59:13 +0000] [11323] [INFO] Shutting down: Master
+[2019-05-06 05:59:54 +0000] [893] [INFO] Starting gunicorn 19.9.0
+[2019-05-06 05:59:54 +0000] [893] [INFO] Listening at: unix:/run/gunicorn/simpledjango_socket (893)
+[2019-05-06 05:59:54 +0000] [893] [INFO] Using worker: sync
+[2019-05-06 05:59:54 +0000] [999] [INFO] Booting worker with pid: 999
+[2019-05-06 05:59:54 +0000] [1002] [INFO] Booting worker with pid: 1002
+[2019-05-06 05:59:54 +0000] [1004] [INFO] Booting worker with pid: 1004
+[2019-05-06 06:02:24 +0000] [893] [INFO] Handling signal: term
+[2019-05-06 06:02:24 +0000] [1002] [INFO] Worker exiting (pid: 1002)
+[2019-05-06 06:02:24 +0000] [1004] [INFO] Worker exiting (pid: 1004)
+[2019-05-06 06:02:24 +0000] [999] [INFO] Worker exiting (pid: 999)
+[2019-05-06 06:02:25 +0000] [893] [INFO] Shutting down: Master
+[2019-05-06 06:03:22 +0000] [864] [INFO] Starting gunicorn 19.9.0
+[2019-05-06 06:03:22 +0000] [864] [INFO] Listening at: unix:/run/gunicorn/simpledjango_socket (864)
+[2019-05-06 06:03:22 +0000] [864] [INFO] Using worker: sync
+[2019-05-06 06:03:22 +0000] [970] [INFO] Booting worker with pid: 970
+[2019-05-06 06:03:22 +0000] [972] [INFO] Booting worker with pid: 972
+[2019-05-06 06:03:23 +0000] [973] [INFO] Booting worker with pid: 973
+[2019-05-06 06:19:42 +0000] [864] [INFO] Handling signal: term
+[2019-05-06 06:19:42 +0000] [970] [INFO] Worker exiting (pid: 970)
+[2019-05-06 06:19:42 +0000] [972] [INFO] Worker exiting (pid: 972)
+[2019-05-06 06:19:42 +0000] [973] [INFO] Worker exiting (pid: 973)
+[2019-05-06 06:19:42 +0000] [864] [INFO] Shutting down: Master
+[2019-05-06 06:20:15 +0000] [3641] [INFO] Starting gunicorn 19.9.0
+[2019-05-06 06:20:15 +0000] [3641] [INFO] Listening at: unix:/run/gunicorn/simpledjango_socket (3641)
+[2019-05-06 06:20:15 +0000] [3641] [INFO] Using worker: sync
+[2019-05-06 06:20:15 +0000] [3662] [INFO] Booting worker with pid: 3662
+[2019-05-06 06:20:15 +0000] [3663] [INFO] Booting worker with pid: 3663
+[2019-05-06 06:20:15 +0000] [3665] [INFO] Booting worker with pid: 3665
+[2019-05-06 08:25:23 +0000] [3641] [INFO] Handling signal: term
+[2019-05-06 08:25:23 +0000] [3662] [INFO] Worker exiting (pid: 3662)
+[2019-05-06 08:25:23 +0000] [3663] [INFO] Worker exiting (pid: 3663)
+[2019-05-06 08:25:23 +0000] [3665] [INFO] Worker exiting (pid: 3665)
+[2019-05-06 08:25:23 +0000] [3641] [INFO] Shutting down: Master
+[2019-05-06 08:25:56 +0000] [28633] [INFO] Starting gunicorn 19.9.0
+[2019-05-06 08:25:56 +0000] [28633] [INFO] Listening at: unix:/run/gunicorn/simpledjango_socket (28633)
+[2019-05-06 08:25:56 +0000] [28633] [INFO] Using worker: sync
+[2019-05-06 08:25:56 +0000] [28654] [INFO] Booting worker with pid: 28654
+[2019-05-06 08:25:56 +0000] [28657] [INFO] Booting worker with pid: 28657
+[2019-05-06 08:25:56 +0000] [28658] [INFO] Booting worker with pid: 28658
+[2019-05-06 11:15:32 +0000] [28633] [INFO] Handling signal: term
+[2019-05-06 11:15:32 +0000] [28654] [INFO] Worker exiting (pid: 28654)
+[2019-05-06 11:15:32 +0000] [28657] [INFO] Worker exiting (pid: 28657)
+[2019-05-06 11:15:32 +0000] [28658] [INFO] Worker exiting (pid: 28658)
+[2019-05-06 11:15:32 +0000] [28633] [INFO] Shutting down: Master
+[2019-05-06 11:16:07 +0000] [29844] [INFO] Starting gunicorn 19.9.0
+[2019-05-06 11:16:07 +0000] [29844] [INFO] Listening at: unix:/run/gunicorn/simpledjango_socket (29844)
+[2019-05-06 11:16:07 +0000] [29844] [INFO] Using worker: sync
+[2019-05-06 11:16:07 +0000] [29864] [INFO] Booting worker with pid: 29864
+[2019-05-06 11:16:07 +0000] [29866] [INFO] Booting worker with pid: 29866
+[2019-05-06 11:16:07 +0000] [29868] [INFO] Booting worker with pid: 29868

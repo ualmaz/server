@@ -1,5 +1,4 @@
-#!/home/kazak/projects/test_projects/locator/env/bin/python3
-
+#!/home/scott/locator/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
