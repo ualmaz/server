@@ -436,9 +436,15 @@ document.body.style.backgroundColor = "white";
 <!-- Script for April -->
 <script>
 function openApr() {
-document.getElementById("April").style.width = "98%";
-document.getElementById("main").style.marginLeft = "98%";
-document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    if (screen.width >= 991) {
+    document.getElementById("January").style.width = "25%";
+    document.getElementById("main").style.marginLeft = "25%";
+    document.body.style.backgroundColor = "rgba(58,114,217,1)";
+    } else {
+    document.getElementById("January").style.width = "98%";
+    document.getElementById("main").style.marginLeft = "98%";
+    document.body.style.backgroundColor = "rgba(58,114,217,1)";
+    }
 }
 
 function closeApr() {
