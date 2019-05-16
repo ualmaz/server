@@ -462,6 +462,20 @@ justify-content: center;
     width: 70px;
   }
 
+    .sidenav1 .closebtn1 {
+  position: absolute;
+  top: 45px;
+  width: 55%;
+
+}
+
+  .sidenav1 {
+  position: absolute;
+  top: 45px;
+  width: 80%;
+
+}
+
 }
 
 /* Breakpoint MD */
