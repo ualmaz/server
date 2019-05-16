@@ -436,6 +436,12 @@ justify-content: center;
 
 }
 
+  .sidenav1 {
+  position: absolute;
+  top: 45px;
+  width: 40%;
+
+}
 
 }
 
