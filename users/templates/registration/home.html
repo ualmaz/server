@@ -78,12 +78,12 @@
               <div class="service-box mt-2 mx-auto">
                 <h5 class="mb-3">CIS & Baltic States</h5>
                 <img class="img-area" src="{% static 'users/img/latviaedit.jpg' %}" alt="CIS" style="width:100%">
-                <div class="middle">
+<!--                 <div class="middle">
                   {% for baltic in baltic %}
-                  <a href="{% url 'users:cities' baltic.pk %}"><div class="text">{{ }}</div></a>
+                  <a href="{% url 'users:cities' baltic.pk %}"><div class="text">{{baltic.country }}</div></a>
                   {% endfor %}
                 </div>
-              </div>
+ -->              </div>
             </div>
             <div class="col-md-4 text-centerrr">
               <div class="service-box mt-2 mx-auto">
