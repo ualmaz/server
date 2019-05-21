@@ -80,7 +80,7 @@
                 <img class="img-area" src="{% static 'users/img/latviaedit.jpg' %}" alt="CIS" style="width:100%">
                 <div class="middle">
                   {% for baltic in baltic %}
-                  <a href="{% url 'users:cities' baltic.pk %}"><div class="text">{{baltic.country }}</div></a>
+                  <a href="{% url 'users:cities' baltic.pk %}"><div class="text">{{baltic }}</div></a>
                   {% endfor %}
                 </div>
               </div>
