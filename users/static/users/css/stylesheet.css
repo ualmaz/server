@@ -641,3 +641,9 @@ filter: grayscale(0%%); / FF 35+ /
 .dropdown-content {
   max-height: 250px;
 }
+
+.input-dropdown {
+  overflow: visible;
+  max-height: 500px;
+
+}
