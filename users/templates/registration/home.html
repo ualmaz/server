@@ -125,7 +125,7 @@
                     </div>
                     <div class="child2">
                       <div class="dropdown show">
-                        <a class="btn btn-secondary" href="#" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false"
+                        <a class="btn btn-secondary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                            style="border-radius: 4px;
                            background-color: #f9f7f7;
                            color: black;
@@ -136,7 +136,7 @@
                            Country .. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </a>
 
-                        <div id="myDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="overflow-y: scroll; max-height: 350px;" data-toggle="dropdown">
+                        <div id="myDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="overflow-y: scroll; max-height: 350px;" data-flip="false">
                           <input class="input-dropdown dropdown" type="text" style="width: 250px; " placeholder="Search.." id="myInput" onkeyup="filterFunction()">
                           {% for country in country %}
                           <a class="dropdown-item" href="{% url 'users:cities' country.pk %}">{{country.country}}</a>
