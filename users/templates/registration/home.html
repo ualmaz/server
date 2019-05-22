@@ -136,7 +136,7 @@
                            Country .. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </a>
 
-                        <div id="myDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="overflow-y: scroll; max-height: 350px;" data-flip="false">
+                        <div id="myDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="overflow-y: scroll; max-height: 350px;" data-toggle="dropdown">
                           <input class="input-dropdown dropdown" type="text" style="width: 250px; " placeholder="Search.." id="myInput" onkeyup="filterFunction()">
                           {% for country in country %}
                           <a class="dropdown-item" href="{% url 'users:cities' country.pk %}">{{country.country}}</a>
