@@ -137,7 +137,7 @@
                         </a>
 
                         <div id="myDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <input class="input-dropdown dropdown" type="text" style="width: 250px;" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                          <input class="input-dropdown dropdown" type="text" style="width: 250px; overflow-y: visible;" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
                           {% for country in country %}
                           <a class="dropdown-item" href="{% url 'users:cities' country.pk %}">{{country.country}}</a>
                           {% endfor %}
