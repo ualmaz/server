@@ -650,7 +650,7 @@ filter: grayscale(0%%); / FF 35+ /
 
 /*Cookie Consent Begin*/
 #cookieConsent {
-    background-color: rgba(20,20,20,0.8);
+    background-color: #808080;
     min-height: 26px;
     font-size: 14px;
     color: #ccc;
