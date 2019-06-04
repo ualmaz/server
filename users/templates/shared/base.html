@@ -30,7 +30,16 @@
     <!-- Custom styles for this template -->
     <link href="{% static 'users/css/creative.min.css' %}" rel="stylesheet">
     <link rel="icon" type="image/png" href="{% static 'users/img/newupcifavicon.png' %}">
-
+    <script>
+    $(document).ready(function () {
+      setTimeout(function () {
+        $("#cookieConsent").fadeIn(200);
+      }, 4000);
+      $("#closeCookieConsent, .cookieConsentOK").click(function () {
+        $("#cookieConsent").fadeOut(200);
+      });
+    });
+    </script>
 
   </head>
 
@@ -361,16 +370,7 @@
 {% endblock %}
 
 
-<script>
-    $(document).ready(function () {
-      setTimeout(function () {
-        $("#cookieConsent").fadeIn(200);
-      }, 4000);
-      $("#closeCookieConsent, .cookieConsentOK").click(function () {
-        $("#cookieConsent").fadeOut(200);
-      });
-    });
-</script>
+
 <script src="{% static 'users/vendor/jquery/jquery.min.js' %}"></script>
 <script src="{% static 'users/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
