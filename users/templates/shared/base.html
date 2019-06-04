@@ -35,10 +35,6 @@
   </head>
 
   <body id="page-top">
-    <div id="cookieKabar">
-        <div id="closeCookieKabar">x</div>
-            This website is using cookies. <a href="#" target="_blank">More info</a>. <a class="cookieConsentOK">That's Fine</a>
-    </div>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav1" style="white-space: nowrap;">
       <div class="container-fluid">
@@ -358,10 +354,10 @@
 
 {% endblock %}
 
-<footer>
 
-</footer>
-
+<script type="text/javascript" id="cookieinfo"
+    src="//cookieinfoscript.com/js/cookieinfo.min.js">
+</script>
 
 
 <script src="{% static 'users/vendor/jquery/jquery.min.js' %}"></script>
@@ -375,16 +371,7 @@
 <!-- Custom scripts for this template -->
 <script src="{% static 'users/js/creative.js' %}"></script>
 
-<script>
-$(document).ready(function(){
-    setTimeout(function () {
-        $("#cookieKabar").fadeIn(200);
-     }, 4000);
-    $("#closeCookieKabar, .cookieConsentOK").click(function() {
-        $("#cookieKabar").fadeOut(200);
-    });
-});
-</script>
+
 
 <script>
 function openNav() {
