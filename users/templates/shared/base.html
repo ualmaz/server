@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <script>window.alert("This site uses cookies to offer you a better browsing experience.")</script>
     <title>EME</title>
 
     <!-- Bootstrap core CSS -->
@@ -355,7 +354,22 @@
 
 {% endblock %}
 
+<div id="cookieConsent">
+  <div id="closeCookieConsent">x</div>
+      This website is using cookies. <a href="#" target="_blank">More info</a>. <a class="cookieConsentOK">That's
+        Fine</a>
+</div>
 
+<script>
+    $(document).ready(function () {
+      setTimeout(function () {
+        $("#cookieConsent").fadeIn(200);
+      }, 4000);
+      $("#closeCookieConsent, .cookieConsentOK").click(function () {
+        $("#cookieConsent").fadeOut(200);
+      });
+    });
+</script>
 <script src="{% static 'users/vendor/jquery/jquery.min.js' %}"></script>
 <script src="{% static 'users/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
