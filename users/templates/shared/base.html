@@ -30,6 +30,11 @@
     <!-- Custom styles for this template -->
     <link href="{% static 'users/css/creative.min.css' %}" rel="stylesheet">
     <link rel="icon" type="image/png" href="{% static 'users/img/newupcifavicon.png' %}">
+    <div id="cookieConsent">
+      <div id="closeCookieConsent">x</div>
+      This website is using cookies. <a href="#" target="_blank">More info</a>. <a class="cookieConsentOK">That's
+        Fine</a>
+    </div>
 
 
   </head>
@@ -354,11 +359,6 @@
 
 {% endblock %}
 
-<div id="cookieConsent">
-  <div id="closeCookieConsent">x</div>
-      This website is using cookies. <a href="#" target="_blank">More info</a>. <a class="cookieConsentOK">That's
-        Fine</a>
-</div>
 
 <script>
     $(document).ready(function () {
