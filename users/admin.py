@@ -7,7 +7,8 @@ admin.site.register(Area)
 
 class CustomCountryAdmin(admin.ModelAdmin):
     list_display = ('name', 'area', 'access_challenge')
-admin.site.register(Country)
+admin.site.register(Country, CustomCountryAdmin)
+
 admin.site.register(Post)
 admin.site.register(Profile)
 admin.site.register(Report)
