@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5662a220-6478-43fa-aad3-a7532c48dea2" name="Default Changelist" comment="" />
+    <list default="true" id="5662a220-6478-43fa-aad3-a7532c48dea2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +13,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/users/models.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/users/admin.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -29,8 +44,8 @@
         <option value="$PROJECT_DIR$/configs/gunicorn_simpledjango.service" />
         <option value="$PROJECT_DIR$/conf/settings.py" />
         <option value="$PROJECT_DIR$/configs/simpledjango_nginx.conf" />
-        <option value="$PROJECT_DIR$/users/admin.py" />
         <option value="$PROJECT_DIR$/users/models.py" />
+        <option value="$PROJECT_DIR$/users/admin.py" />
       </list>
     </option>
   </component>
@@ -68,7 +83,8 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../reactjs/practice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -127,9 +143,10 @@
     <option name="totallyTimeSpent" value="12204000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1366" height="700" extended-state="6" />
+    <frame x="0" y="27" width="1366" height="698" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21212122" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21146686" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -160,10 +177,14 @@
     <entry file="file://$PROJECT_DIR$/conf/wsgi.py" />
     <entry file="file://$PROJECT_DIR$/conf/settings_prod.py" />
     <entry file="file://$PROJECT_DIR$/configs/simpledjango_nginx.conf" />
-    <entry file="file://$PROJECT_DIR$/users/admin.py" />
     <entry file="file://$PROJECT_DIR$/configs/gunicorn_simpledjango.socket" />
     <entry file="file://$PROJECT_DIR$/configs/gunicorn_simpledjango.service" />
     <entry file="file://$PROJECT_DIR$/conf/settings.py" />
-    <entry file="file://$PROJECT_DIR$/users/models.py" />
+    <entry file="file://$PROJECT_DIR$/users/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
   </component>
 </project>
