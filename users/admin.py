@@ -4,6 +4,9 @@ from .models import Area, Country, Post, User, Profile, Report
 
 
 admin.site.register(Area)
+
+class CustomCountryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'area', 'access_challenge')
 admin.site.register(Country)
 admin.site.register(Post)
 admin.site.register(Profile)
