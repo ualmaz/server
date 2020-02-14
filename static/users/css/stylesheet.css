@@ -430,7 +430,6 @@ justify-content: center;
   }
 
 
-
 }
 
 /* Breakpoint SM */
@@ -462,6 +461,7 @@ justify-content: center;
   .input-dropdown {
     width: 70px;
   }
+
 
 }
 
@@ -641,3 +641,13 @@ filter: grayscale(0%%); / FF 35+ /
 .dropdown-content {
   max-height: 250px;
 }
+
+.input-dropdown {
+  overflow: visible !important;
+  max-height: 500px !important;
+
+}
+
+
+
+/*Cookie Consent End*/
