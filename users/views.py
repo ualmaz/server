@@ -232,3 +232,6 @@ def post_page(request):
     }
 
     return render(request, 'users/post_page.html', context)
+
+def youtube(request):
+    return render(request, 'users/youtube.html')

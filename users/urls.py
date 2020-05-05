@@ -26,6 +26,7 @@ urlpatterns = [
     path('accounts/cabinet/address/<int:pk>/', views.address, name='address'),
     path('ajax/load-cities/', views.load_cities, name='ajax_load_cities'),
     path('accounts/cabinet/post_page/', views.post_page, name='post-page'),
+    path('accounts/cabinet/youtube/', views.youtube, name='youtube')
 
 
 
