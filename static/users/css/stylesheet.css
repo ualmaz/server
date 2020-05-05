@@ -659,7 +659,7 @@ filter: grayscale(0%%); / FF 35+ /
   height: 100%;
 }
 
-.container {
+.container1 {
   position: relative;
   overflow: hidden;
   width: 100%;
