@@ -36,13 +36,13 @@
     {% endfor %}
   </div>
   
-  <div class="ml-4 pl-5">
+  <div class="ml-4 pl-4">
     {% for event in calendar %}
       <p class="ex">{{event.title}}</p>
     {% endfor %}
   </div> 
   
-  <div style="margin-left: 260px;">
+  <div style="margin-left: 300px;">
     {% for event in calendar %}
       {% if event.link %}
         <p class="ex"><a href="{{event.link}}">Learn more ..</a></p>
