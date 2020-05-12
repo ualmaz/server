@@ -202,3 +202,9 @@
 [2019-10-30 01:34:10 +0000] [991] [INFO] Booting worker with pid: 991
 [2019-10-30 01:34:10 +0000] [992] [INFO] Booting worker with pid: 992
 [2019-10-30 01:34:10 +0000] [994] [INFO] Booting worker with pid: 994
+[2020-05-12 15:02:21 +0000] [865] [INFO] Starting gunicorn 19.9.0
+[2020-05-12 15:02:21 +0000] [865] [INFO] Listening at: unix:/run/gunicorn/simpledjango_socket (865)
+[2020-05-12 15:02:21 +0000] [865] [INFO] Using worker: sync
+[2020-05-12 15:02:21 +0000] [970] [INFO] Booting worker with pid: 970
+[2020-05-12 15:02:21 +0000] [971] [INFO] Booting worker with pid: 971
+[2020-05-12 15:02:21 +0000] [974] [INFO] Booting worker with pid: 974
