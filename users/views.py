@@ -252,4 +252,4 @@ class CalendarCreateView(CreateView):
     template_name = 'calendar/calendar_form.html'
     context_object_name = 'form'
     form_class = CalendarForm
-    success_url = reverse_lazy('users:calendar')
+    success_url = reverse_lazy('calendar')
