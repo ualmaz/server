@@ -656,5 +656,5 @@ p.ex {
   text-align:left;
   white-space: wrap;
   overflow: hidden;
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #deddd9;
 }

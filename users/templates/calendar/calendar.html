@@ -4,49 +4,57 @@
 
 {% block content %}
 
-    <div class="container mt-5 pt-5">
-      <div class="justify-content-center align-items-center mb-4 mt-4">
-      <h1>Events Calendar</h1>
-    </div>
-    <table class="table" style="width: 800px">
+<div class="container mt-5 pt-5">
+  <div class="justify-content-center align-items-center mb-4 mt-4 ml-4">
+    <h1>Events Calendar</h1>
+  </div>
+<div class="ml-4">
+  <table class="table" style="width: 800px">
   <thead>
-    <tr>
-      <th class="ml-2" scope="col">From:</th>
-      <th scope="col">To:</th>
-      <th scope="col">Event name:</th>
-      <th scope="col">Link:</th>
-    </tr>
+  <tr>
+    <th scope="col">From:</th>
+    <th scope="col">To:</th>
+    <th class="ml-5 pl-5" scope="col">Event Name:</th>
+    <th scope="col">Link:</th>
+  </tr>
   </thead>
   </table>
+</div>
 
-      <div class="row">
-        <div class=" border-bottom">
-          {% for event in calendar %}
-            <p class="ex">{{event.date_from}}</p>
-          {% endfor %}
-        </div>
-        <div class="pl-5 ml-5">
-          {% for event in calendar %}
-            <p class="ex">{{event.date_to}}</p>
-          {% endfor %}
-        </div>
-        <div class="ml-4 pl-5">
-          {% for event in calendar %}
-            <p class="ex">{{event.title}}</p>
-          {% endfor %}
-        </div>
-        <div class="ml-4">
-          {% for event in calendar %}
-            {% if event.link %}
-              <p class="ex"><a href="{{event.link}}">Learn more ..</a></p>
-            {% else %}
-              <p class="ex"><small>No link provided</small></p>
-            {% endif %}
-          {% endfor %}
+<div class="container ml-4" style="width: 1200px;">
+<div class="row">
 
+  <div>
+    {% for event in calendar %}
+      <p class="ex">{{event.date_from}}</p>
+    {% endfor %}
+  </div>
+  
+  <div class="ml-3 pl-5">
+    {% for event in calendar %}
+      <p class="ex">{{event.date_to}}</p>
+    {% endfor %}
+  </div>
+  
+  <div class="ml-4 pl-5">
+    {% for event in calendar %}
+      <p class="ex">{{event.title}}</p>
+    {% endfor %}
+  </div> 
+  
+  <div style="margin-left: 220px;">
+    {% for event in calendar %}
+      {% if event.link %}
+        <p class="ex"><a href="{{event.link}}">Learn more ..</a></p>
+      {% else %}
+        <p class="ex"><small>No link provided</small></p>
+      {% endif %}
+    {% endfor %}
+  </div>
 
-        </div>
+</div>
+</div>
+</div>
 
-      </div>
 
     {% endblock %}
