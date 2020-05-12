@@ -240,7 +240,7 @@ def youtube(request):
 class CalendarView(ListView):
     model = Calendar
     form_class = CalendarForm
-    template_name = 'video/calendar.html'
+    template_name = 'calendar/calendar.html'
     context_object_name = 'calendar'
     ordering = ['-date_posted']
 
@@ -249,7 +249,7 @@ class CalendarDetailView(DetailView):
 
 class CalendarCreateView(CreateView):
     model = Calendar
-    template_name = 'video/calendar_form.html'
+    template_name = 'calendar/calendar_form.html'
     context_object_name = 'form'
     form_class = CalendarForm
-    success_url = reverse_lazy('calendar')
+    success_url = reverse_lazy('users:calendar')
