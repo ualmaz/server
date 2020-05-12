@@ -13,9 +13,8 @@
     <tr>
       <th scope="col">From:</th>
       <th scope="col">To:</th>
-      <th scope="col">Title</th>
-      <th scope="col">Content</th>
-      <th scope="col">Link</th>
+      <th scope="col">Event name:</th>
+      <th scope="col">Link:</th>
     </tr>
   </thead>
   </table>
@@ -34,11 +33,6 @@
         <div class="ml-4 pl-5">
           {% for event in calendar %}
             <p class="ex">{{event.title}}</p>
-          {% endfor %}
-        </div>
-        <div class="ml-4 pl-4 eshek" id="eshek">
-          {% for event in calendar %}
-            <p class="ex">{{event.content}}</p>
           {% endfor %}
         </div>
         <div class="ml-4">

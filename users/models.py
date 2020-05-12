@@ -137,7 +137,6 @@ class Report(models.Model):
 
 class Calendar(models.Model):
     title = models.CharField('Event title:', max_length=100)
-    content = models.CharField('Content:', max_length=100, default='')
     date_posted = models.DateField(default=timezone.now)
     date_from = models.DateField()
     date_to = models.DateField()

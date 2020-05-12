@@ -72,7 +72,7 @@ class CalendarForm(forms.ModelForm):
 
     class Meta:
             model = Calendar
-            fields = ['date_from', 'date_to', 'title', 'content', 'link']
+            fields = ['date_from', 'date_to', 'title', 'link']
             widgets = {
                 'date_from' : DateInput(),
                 'date_to' : DateInput()
