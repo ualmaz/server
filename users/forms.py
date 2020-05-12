@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth import get_user_model
-from .models import Post, User, Country, Profile, Report
+from .models import Post, User, Country, Profile, Report, Calendar
 
 class UserCreationModelForm(UserCreationForm):
     class Meta:
@@ -59,3 +59,21 @@ class ReportForm(forms.ModelForm):
                 pass  # invalid input from the client; ignore and fallback to empty City queryset
         elif self.instance.pk:
             self.fields['country'].queryset = self.instance.area.country_set.order_by('name')
+
+
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+
+class CalendarForm(forms.ModelForm):
+    title = forms.CharField()
+    content = forms.CharField()
+
+    class Meta:
+            model = Calendar
+            fields = ['date_from', 'date_to', 'title', 'content', 'link']
+            widgets = {
+                'date_from' : DateInput(),
+                'date_to' : DateInput()
+            }

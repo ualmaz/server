@@ -1,5 +1,5 @@
 from django.urls import include, path
-from .views import UserRegistrationView, PostCreateView, PostDetailView, PostUpdateView, PostDeleteView, ReportCreateView
+from .views import UserRegistrationView, PostCreateView, PostDetailView, PostUpdateView, PostDeleteView, ReportCreateView, CalendarView, CalendarDetailView, CalendarCreateView
 from . import views
 
 
@@ -26,7 +26,9 @@ urlpatterns = [
     path('accounts/cabinet/address/<int:pk>/', views.address, name='address'),
     path('ajax/load-cities/', views.load_cities, name='ajax_load_cities'),
     path('accounts/cabinet/post_page/', views.post_page, name='post-page'),
-    path('accounts/cabinet/youtube/', views.youtube, name='youtube')
+    path('accounts/cabinet/youtube/', views.youtube, name='youtube'),
+    path('calendar/', CalendarView.as_view(), name='calendar'),
+    path('calendar/new/', CalendarCreateView.as_view(), name='calendar-form')
 
 
 

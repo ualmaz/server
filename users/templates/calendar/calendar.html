@@ -1,0 +1,57 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <div class="container">
+      <div class="justify-content-center align-items-center mb-4 mt-4">
+      <h1>Events Calendar</h1>
+    </div>
+    <table class="table" style="width: 1000px">
+  <thead>
+    <tr>
+      <th scope="col">From:</th>
+      <th scope="col">To:</th>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  </table>
+
+      <div class="row">
+        <div class=" border-bottom pl-4">
+          {% for event in calendar %}
+            <p class="ex">{{event.date_from}}</p>
+          {% endfor %}
+        </div>
+        <div class="pl-5 ml-5">
+          {% for event in calendar %}
+            <p class="ex">{{event.date_to}}</p>
+          {% endfor %}
+        </div>
+        <div class="ml-4 pl-5">
+          {% for event in calendar %}
+            <p class="ex">{{event.title}}</p>
+          {% endfor %}
+        </div>
+        <div class="ml-4 pl-4 eshek" id="eshek">
+          {% for event in calendar %}
+            <p class="ex">{{event.content}}</p>
+          {% endfor %}
+        </div>
+        <div class="ml-4">
+          {% for event in calendar %}
+            {% if event.link %}
+              <p class="ex"><a href="{{event.link}}">Learn more ..</a></p>
+            {% else %}
+              <p class="ex"><small>No link provided</small></p>
+            {% endif %}
+          {% endfor %}
+
+
+        </div>
+
+      </div>
+
+    {% endblock %}

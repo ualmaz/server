@@ -649,5 +649,12 @@ filter: grayscale(0%%); / FF 35+ /
 }
 
 
-
-/*Cookie Consent End*/
+p.ex {
+  word-wrap: break-word;
+  max-width:250px;
+  height: 100px;
+  text-align:left;
+  white-space: wrap;
+  overflow: hidden;
+  border-bottom: 1px solid blue;
+}

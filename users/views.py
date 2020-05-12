@@ -9,8 +9,8 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from .models import User, Post, Country, Report, Area
-from .forms import PostForm, UserCreationModelForm, UserUpdateForm, ProfileUpdateForm, ReportForm
+from .models import User, Post, Country, Report, Area, Calendar
+from .forms import PostForm, UserCreationModelForm, UserUpdateForm, ProfileUpdateForm, ReportForm, CalendarForm
 
 class UserRegistrationView(SuccessMessageMixin, CreateView):
     form_class = UserCreationModelForm
@@ -235,3 +235,21 @@ def post_page(request):
 
 def youtube(request):
     return render(request, 'users/youtube.html')
+
+
+class CalendarView(ListView):
+    model = Calendar
+    form_class = CalendarForm
+    template_name = 'video/calendar.html'
+    context_object_name = 'calendar'
+    ordering = ['-date_posted']
+
+class CalendarDetailView(DetailView):
+    model = Calendar
+
+class CalendarCreateView(CreateView):
+    model = Calendar
+    template_name = 'video/calendar_form.html'
+    context_object_name = 'form'
+    form_class = CalendarForm
+    success_url = reverse_lazy('calendar')
