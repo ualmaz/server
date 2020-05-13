@@ -1,5 +1,5 @@
 {% load staticfiles %}
-
+{% get id_list as id_list %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,8 +54,8 @@
                          <!-- <a class="dropdown-item" href="{% url 'users:report' %}"><h6>Report</h6></a> -->
                          <a class="dropdown-item" href="{% url 'users:post-create' %}"><h6>Add Church</h6></a>
                          <a class="dropdown-item" href="{% url 'users:cabinet' %}"><h6>Profile</h6></a>
-                          {% for ul in users_id_list %}
-                            {% if user.id == ul %}
+                          {% for id_list in id_list %}
+                            {% if user.id == id_list.id %}
                               <a class="dropdown-item" target="_blank" href="{% url 'users:calendar-form' %}"><h6>Submit Event</h6></a>
                             {% endif %}
                           {% endfor %}

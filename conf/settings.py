@@ -67,6 +67,11 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'users.context_processors.users_id_list'
             ],
+
+            'libraries':{
+            'users_ids_list': 'users.template_tags.users_ids_list',
+
+            }
         },
     },
 ]
@@ -148,4 +153,3 @@ EMAIL_PORT = 587
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
-ID_LIST = [2, 5]
