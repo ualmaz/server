@@ -11,6 +11,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import User, Post, Country, Report, Area, Calendar
 from .forms import PostForm, UserCreationModelForm, UserUpdateForm, ProfileUpdateForm, ReportForm, CalendarForm
+from django.http import HttpResponseRedirect
 
 class UserRegistrationView(SuccessMessageMixin, CreateView):
     form_class = UserCreationModelForm
@@ -244,12 +245,22 @@ class CalendarView(ListView):
     context_object_name = 'calendar'
     ordering = ['-date_posted']
 
+
 class CalendarDetailView(DetailView):
     model = Calendar
 
-class CalendarCreateView(CreateView):
-    model = Calendar
-    template_name = 'calendar/calendar_form.html'
-    context_object_name = 'form'
-    form_class = CalendarForm
-    success_url = reverse_lazy('users:calendar')
+def calendar_form(request):
+    id_list = User.objects.filter(pk__in=[2, 5])
+    if request.method == 'POST':
+        form = CalendarForm(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect('calendar')
+    else:
+        form = CalendarForm()
+
+    context = {
+        'form': form,
+        'id_list': id_list
+
+    }
+    return render(request, 'video/calendar_form.html', context)

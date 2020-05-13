@@ -28,7 +28,8 @@ urlpatterns = [
     path('accounts/cabinet/post_page/', views.post_page, name='post-page'),
     path('accounts/cabinet/youtube/', views.youtube, name='youtube'),
     path('calendar/', CalendarView.as_view(), name='calendar'),
-    path('calendar/new/', CalendarCreateView.as_view(), name='calendar-form')
+    path('calendar/new/', views.calendar_form, name='calendar-form')
+
 
 
 
