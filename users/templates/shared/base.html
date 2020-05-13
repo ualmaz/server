@@ -57,8 +57,10 @@
                          {% for id_list in id_list %}
                           {% if user.id == id_list.id %}
                            <a class="dropdown-item" target="_blank" href="{% url 'users:calendar-form' %}"><h6>Submit Event</h6></a>
+                          {% empty %}
+                          <p>dui</p>
                           {% endif %}
-                           {% endfor %}
+                          {% endfor %}
                         </div>
                     </li>
                     <li class="nav-item">
