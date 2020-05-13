@@ -251,7 +251,6 @@ class CalendarDetailView(DetailView):
     model = Calendar
 
 def calendar_form(request):
-    id_list = settings.ID_LIST
     if request.method == 'POST':
         form = CalendarForm(request.POST)
         if form.is_valid():
@@ -260,8 +259,7 @@ def calendar_form(request):
         form = CalendarForm()
 
     context = {
-        'form': form,
-        'id_list': id_list
+        'form': form
 
     }
     return render(request, 'video/calendar_form.html', context)
