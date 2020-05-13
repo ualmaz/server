@@ -15,7 +15,7 @@ admin.site.register(Report)
 admin.site.register(Calendar)
 
 class CustomUserAdmin(admin.ModelAdmin):
-    list_display = ('username','first_name', 'last_name', 'is_active', 'id')
+    list_display = ('username','first_name', 'last_name', 'is_active', 'user_id')
 
 
 
