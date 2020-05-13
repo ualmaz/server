@@ -1,5 +1,5 @@
 from django.urls import include, path
-from .views import UserRegistrationView, PostCreateView, PostDetailView, PostUpdateView, PostDeleteView, ReportCreateView, CalendarView, CalendarDetailView, CalendarCreateView
+from .views import UserRegistrationView, PostCreateView, PostDetailView, PostUpdateView, PostDeleteView, ReportCreateView, CalendarView, CalendarDetailView
 from . import views
 
 
