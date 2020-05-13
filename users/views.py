@@ -262,4 +262,4 @@ def calendar_form(request):
         'form': form
 
     }
-    return render(request, 'video/calendar_form.html', context)
+    return render(request, 'calendar/calendar_form.html', context)
