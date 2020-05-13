@@ -147,3 +147,4 @@ EMAIL_PORT = 587
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+ID_LIST = [2, 5]

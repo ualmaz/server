@@ -12,6 +12,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import User, Post, Country, Report, Area, Calendar
 from .forms import PostForm, UserCreationModelForm, UserUpdateForm, ProfileUpdateForm, ReportForm, CalendarForm
 from django.http import HttpResponseRedirect
+from django.conf import settings
 
 class UserRegistrationView(SuccessMessageMixin, CreateView):
     form_class = UserCreationModelForm
@@ -250,7 +251,7 @@ class CalendarDetailView(DetailView):
     model = Calendar
 
 def calendar_form(request):
-    id_list = User.objects.filter(pk__in=[2, 5])
+    id_list = settings.ID_LIST
     if request.method == 'POST':
         form = CalendarForm(request.POST)
         if form.is_valid():
