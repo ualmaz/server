@@ -1,5 +1,5 @@
 from django import template
-from video.models import User
+from users.models import User
 
 register = template.Library()
 
