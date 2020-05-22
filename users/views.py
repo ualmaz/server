@@ -252,25 +252,9 @@ class CalendarDetailView(DetailView):
 
 class CalendarCreateView(CreateView):
     model = Calendar
+    template_name = 'calendar/calendar_form.html'
     fields = ['date_from', 'date_to', 'title', 'link']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-
-
-
-
-# def calendar_form(request):
-#     if request.method == 'POST':
-#         form = CalendarForm(request.POST)
-#         if form.is_valid():
-#             return HttpResponseRedirect('calendar')
-#     else:
-#         form = CalendarForm()
-#
-#     context = {
-#         'form': form
-#
-#     }
-#     return render(request, 'calendar/calendar_form.html', context)
