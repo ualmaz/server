@@ -57,7 +57,7 @@
                          <a class="dropdown-item" href="{% url 'users:cabinet' %}"><h6>Profile</h6></a>
                           {% for id_list in id_list %}
                             {% if user.id == id_list.id %}
-                              <a class="dropdown-item" target="_blank" href="{% url 'users:calendar-form' %}"><h6>Submit Event</h6></a>
+                              <a class="dropdown-item" target="_blank" href="{% url 'users:calendar-form' %}"><h6>Add Event</h6></a>
                             {% endif %}
                           {% endfor %}
                          
