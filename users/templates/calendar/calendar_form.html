@@ -1,4 +1,5 @@
 {% extends 'shared/base.html' %}
+{% load crispy_forms_tags %}
 {% load staticfiles %}
 
 {% block content %}
@@ -11,10 +12,10 @@
 
     
 
-      <p>Date from: {{ form.date_from }}</p>
-      <p>Date to: {{ form.date_to }}</p>
-      <p>Title {{ form.title }}</p>
-      <p>Link {{ form.link }}</p>
+      <p>Date from: {{ form.date_from|as_crispy_field }}</p>
+      <p>Date to: {{ form.date_to|as_crispy_field }}</p>
+      <p>Title {{ form.title|as_crispy_field }}</p>
+      <p>Link {{ form.link|as_crispy_field }}</p>
 
 
   </fieldset>
