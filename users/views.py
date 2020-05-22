@@ -254,7 +254,7 @@ def calendar_form(request):
     if request.method == 'POST':
         form = CalendarForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('calendar')
+            return HttpResponseRedirect('users:calendar')
     else:
         form = CalendarForm()
 
