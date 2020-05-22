@@ -15,7 +15,7 @@
     <th scope="col">From:</th>
     <th scope="col">To:</th>
     <th class="ml-5 pl-5" scope="col">Event Name:</th>
-    <th class="pl-2" scope="col">Link:</th>
+    <th class="ml-2" scope="col">Link:</th>
   </tr>
   </thead>
   </table>
@@ -42,7 +42,7 @@
     {% endfor %}
   </div> 
   
-  <div style="margin-left: 290px;">
+  <div style="margin-left: 280px;">
     {% for event in calendar %}
       {% if event.link %}
         <p class="ex"><a href="{{event.link}}">Learn more ..</a></p>
