@@ -68,7 +68,6 @@ class DateInput(forms.DateInput):
 
 class CalendarForm(forms.ModelForm):
     title = forms.CharField()
-    content = forms.CharField()
 
     class Meta:
             model = Calendar

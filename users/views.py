@@ -252,6 +252,7 @@ class CalendarDetailView(DetailView):
 
 class CalendarCreateView(CreateView):
     model = Calendar
+    form_class = CalendarForm
     template_name = 'calendar/calendar_form.html'
     fields = ['date_from', 'date_to', 'title', 'link']
 
