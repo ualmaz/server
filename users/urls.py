@@ -1,5 +1,15 @@
 from django.urls import include, path
-from .views import UserRegistrationView, PostCreateView, PostDetailView, PostUpdateView, PostDeleteView, ReportCreateView, CalendarView, CalendarDetailView
+from .views import (
+    UserRegistrationView,
+    PostCreateView,
+    PostDetailView,
+    PostUpdateView,
+    PostDeleteView,
+    ReportCreateView,
+    CalendarView,
+    CalendarDetailView,
+    CalendarCreateView
+)
 from . import views
 
 
@@ -28,7 +38,8 @@ urlpatterns = [
     path('accounts/cabinet/post_page/', views.post_page, name='post-page'),
     path('accounts/cabinet/youtube/', views.youtube, name='youtube'),
     path('calendar/', CalendarView.as_view(), name='calendar'),
-    path('calendar/new/', views.calendar_form, name='calendar-form')
+    path('calendar/<int:pk>', CalendarDetailView.as_view(), name='calendar-detail'),
+    path('calendar/new/', CalendarCreateView.as_view(), name='calendar-form')
 
 
 

@@ -5,7 +5,7 @@
 
 <div class="content-section ml-5 mt-5">
     <h3 class="mb-5">Add Event</h3>
-<form method="post" action="{% url 'users:calendar' %}">
+<form method="post">
   {% csrf_token %}
   <fieldset class="form-group">
 
@@ -14,7 +14,6 @@
       <p>Date from: {{ form.date_from }}</p>
       <p>Date to: {{ form.date_to }}</p>
       <p>Title {{ form.title }}</p>
-      <p>Content {{ form.content }}</p>
       <p>Link {{ form.link }}</p>
 
 
