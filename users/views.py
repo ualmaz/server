@@ -244,7 +244,9 @@ class CalendarView(ListView):
     form_class = CalendarForm
     template_name = 'calendar/calendar.html'
     context_object_name = 'calendar'
-    ordering = ['-date_posted']
+
+    class Meta:
+        ordering = ['-date_posted']
 
 
 class CalendarDetailView(DetailView):
