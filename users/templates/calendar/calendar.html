@@ -57,20 +57,21 @@
         {% endfor %}
       </div>
 
+      <div style="margin-left: 245px;">
+        {% for event in calendar %}
+          {% if event.link %}
+            <p class="ex"><a href="{{event.link}}">Learn more ..</a></p>
+          {% else %}
+            <p class="ex"><small>No link provided</small></p>
+          {% endif %}
+        {% endfor %}
+    </div>
     </div>
 
   </div>
 </div>
 
-  <div style="margin-left: 245px;">
-    {% for event in calendar %}
-      {% if event.link %}
-        <p class="ex"><a href="{{event.link}}">Learn more ..</a></p>
-      {% else %}
-        <p class="ex"><small>No link provided</small></p>
-      {% endif %}
-    {% endfor %}
-  </div>
+
 
 </div>
 </div>
