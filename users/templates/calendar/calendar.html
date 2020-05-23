@@ -54,9 +54,9 @@
       <div class="col-md-3">
         {% for event in calendar %}
           {% if event.link %}
-            <p class="ex"><a href="{{event.link}}">Learn more ..</a></p>
+        <div class="gold text-break mt-2"><a href="{{event.link}}">Learn more ..</a></div>
           {% else %}
-            <p class="ex"><small>No link provided</small></p>
+        <div class="gold text-break mt-2"><small>No link provided</small></div>
           {% endif %}
         {% endfor %}
       </div>
