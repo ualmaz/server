@@ -254,7 +254,9 @@ class CalendarCreateView(CreateView):
     model = Calendar
     form_class = CalendarForm
     template_name = 'calendar/calendar_form.html'
-    ordering = ['date_posted']
+    
+    class Meta:
+        ordering = ['-date_posted']
 
 
     def form_valid(self, form):
