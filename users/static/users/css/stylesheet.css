@@ -658,3 +658,30 @@ p.ex {
   overflow: hidden;
   border-bottom: 1px solid #deddd9;
 }
+
+.blue,
+.green,
+.red,
+.yellow,
+.gold {
+  height: 50%;
+
+}
+
+.blue {
+  background-color: blue;
+}
+.green {
+  background-color: green;
+}
+.gold {
+  background-color: gold;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.red {
+  background-color: red;
+}
