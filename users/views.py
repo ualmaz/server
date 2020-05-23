@@ -249,10 +249,10 @@ class CalendarView(ListView):
 
 class CalendarDetailView(DetailView):
     model = Calendar
+    ordering = ['-date_posted']
 
 class CalendarCreateView(CreateView):
     model = Calendar
-    ordering = ['-date_posted']
     form_class = CalendarForm
     template_name = 'calendar/calendar_form.html'
 
