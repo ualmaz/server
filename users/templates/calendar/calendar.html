@@ -9,84 +9,26 @@
   <h2>Events Calendar</h2>
 </div>
 
-<div class="grid-container">
-  <div class="grid-item">1</div>
-  <div class="grid-item">2</div>
-  <div class="grid-item">3</div>
-  <div class="grid-item">4</div>
-  <div class="grid-item">5</div>
-  <div class="grid-item">6</div>
-  <div class="grid-item">7</div>
-  <div class="grid-item">8</div>
-  <div class="grid-item">9</div>
-</div>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+  <th>Date from:</th>
+  <th>Date to:</th>
+  <th>Event name:</th>
+  <th>Link:</th>
+</tr>
+</thead>
 
-
-
-
-
-<div class="container-lg mt-4">
-
-    <div class="row">
-      <div class="col-md-3">
-        <div class="blue pl-2"><strong>From:</strong></div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="red pl-2"><strong>To:</strong></div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="blue pl-2"><strong>Event name:</strong></div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="red pl-2"><strong>Link:</strong></div>
-      </div>
-
-    </div>
-
-
-    <div class="row mt-2">
-      <div class="col-md-3">
-        {% for event in calendar %}
-        <div class="gold text-break mt-2">{{event.date_from}}</div>
-        {% endfor %}
-      </div>
-
-      <div class="col-md-3">
-        {% for event in calendar %}
-        <div class="gold text-break mt-2">{{event.date_to}}</div>
-        {% endfor %}
-      </div>
-
-      <div class="col-md-3">
-        {% for event in calendar %}
-        <div class="gold text-break mt-2">{{event.title}}</div>
-        {% endfor %}
-      </div>
-
-      <div class="col-md-3">
-        {% for event in calendar %}
-          {% if event.link %}
-        <div class="gold text-break mt-2"><a href="{{event.link}}">Learn more ..</a></div>
-          {% else %}
-        <div class="gold text-break mt-2"><small>No link provided</small></div>
-          {% endif %}
-        {% endfor %}
-      </div>
-
-
-    </div>
-
-
-</div>
-
-
-
-</div>
-</div>
-</div>
-
+{% for item in calendar %}
+<tbody>
+<tr>
+  <td>{{item.date_from}}</td>
+  <td>{{item.date_to}}</td>
+  <td>{{item.title}}</td>
+  <td>{{item.link}}</td>
+</tr>
+</tbody>
+{% endfor %}
+</table>
 
     {% endblock %}
