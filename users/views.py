@@ -244,11 +244,7 @@ class CalendarView(ListView):
     form_class = CalendarForm
     template_name = 'calendar/calendar.html'
     context_object_name = 'calendar'
-
-    def get_ordering(self):
-        ordering = self.request.GET.get('ordering', '-date_posted')
-        # validate ordering here
-        return ordering
+    ordering = ['-date_posted']
 
 
 class CalendarDetailView(DetailView):
