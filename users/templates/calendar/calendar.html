@@ -19,19 +19,18 @@
 </tr>
 </thead>
 
-{% for item in calendar %}
+{% for event in calendar %}
 <tbody>
 <tr>
-  <td>{{item.date_from}}</td>
-  <td>{{item.date_to}}</td>
-  <td>{{item.title}}</td>
-  {% for event in calendar %}
+  <td>{{event.date_from}}</td>
+  <td>{{event.date_to}}</td>
+  <td>{{event.title}}</td>
+
       {% if event.link %}
         <td><a href="{{event.link}}">Learn more ..</a></td>
       {% else %}
         <td><small>No link provided</small></td>
       {% endif %}
-  {% endfor %}
 </tr>
 </tbody>
 {% endfor %}
