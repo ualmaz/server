@@ -5,9 +5,9 @@
 {% block content %}
 
 
-  <div class="justify-content-center align-items-center mb-4 mt-4 ml-4">
-    <h1>Events Calendar</h1>
-  </div>
+<div class="justify-content-center align-items-center mb-4 mt-5 ml-4">
+  <h1>Events Calendar</h1>
+</div>
 <div class="container mt-4">
   <div class="head">
 
@@ -51,12 +51,6 @@
         {% endfor %}
       </div>
 
-      <div class="col-md-3">
-        {% for event in calendar %}
-        <div class="gold text-break mt-2"><a href="{{event.link}}">Learn more..</a></div>
-        {% endfor %}
-      </div>
-
       <div style="margin-left: 245px;">
         {% for event in calendar %}
           {% if event.link %}
@@ -65,7 +59,9 @@
             <p class="ex"><small>No link provided</small></p>
           {% endif %}
         {% endfor %}
-    </div>
+      </div>
+
+
     </div>
 
   </div>
