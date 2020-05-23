@@ -254,6 +254,8 @@ class CalendarCreateView(CreateView):
     model = Calendar
     form_class = CalendarForm
     template_name = 'calendar/calendar_form.html'
+    ordering = ['-date_posted']
+
 
     def form_valid(self, form):
         form.instance.author = self.request.user
