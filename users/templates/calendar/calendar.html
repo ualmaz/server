@@ -25,7 +25,13 @@
   <td>{{item.date_from}}</td>
   <td>{{item.date_to}}</td>
   <td>{{item.title}}</td>
-  <td>{{item.link}}</td>
+  {% for event in calendar %}
+      {% if event.link %}
+        <td><a href="{{event.link}}">Learn more ..</a></td>
+      {% else %}
+        <td><small>No link provided</small></td>
+      {% endif %}
+  {% endfor %}
 </tr>
 </tbody>
 {% endfor %}
