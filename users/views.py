@@ -252,11 +252,10 @@ class CalendarDetailView(DetailView):
 
 class CalendarCreateView(CreateView):
     model = Calendar
+    ordering = ['-date_posted']
     form_class = CalendarForm
     template_name = 'calendar/calendar_form.html'
 
-    class Meta:
-        ordering = ['-date_posted']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
