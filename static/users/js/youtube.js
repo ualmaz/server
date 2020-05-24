@@ -13,7 +13,7 @@ function loadVideo(iframe) {
 
       var url = 'https://www.youtube.com/channel/' + channelID;
       $.getJSON('https://www.googleapis.com/youtube/v3/videos?id=' + id + '&key=' + apiKey + '&fields=items(snippet(title))&part=snippet', {format: 'json', url: url}, function (data) {
-        var h2s = $("h5")
+        var h2s = $("h6")
         console.log(data.items)
         $(h2s[videoNumber]).html(data.items[0].snippet.title)
 
