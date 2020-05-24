@@ -9,7 +9,7 @@ function loadVideo(iframe) {
       console.log(videoNumber);
       var link = data.items[videoNumber].link;
       id = link.substr(link.indexOf("=") + 1);
-      iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=1");
+      iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?fs=1?controls=0&autoplay=1");
 
       var url = 'https://www.youtube.com/channel/' + channelID;
       $.getJSON('https://www.googleapis.com/youtube/v3/videos?id=' + id + '&key=' + apiKey + '&fields=items(snippet(title))&part=snippet', {format: 'json', url: url}, function (data) {
