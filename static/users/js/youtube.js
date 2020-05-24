@@ -1,6 +1,6 @@
 var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
 var channelID = 'UCrhdp1UfyUQG7GYJSF7xUVQ';
-var apiKey =  '';
+var apiKey =  'AIzaSyDchLsIgc903isuUh9BnVHMyAJE7CwK8i0';
 
 function loadVideo(iframe) {
   $.getJSON(reqURL + iframe.getAttribute('cid'),
