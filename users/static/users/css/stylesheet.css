@@ -671,7 +671,7 @@ p.ex {
 #content div iframe{
   /* background: #3bbced; */
   padding: 5px;
-  border: 1px solid green;
+
 }
 
 #content div:nth-child(even) {
