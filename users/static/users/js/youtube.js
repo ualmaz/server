@@ -11,8 +11,8 @@ function loadVideo(iframe) {
       id = link.substr(link.indexOf("=") + 1);
       iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=0");
 
-      var url = 'https://www.youtube.com/channel/' + channelID_tuttle;
-      $.getJSON('https://www.googleapis.com/youtube/v3/videos?id=' + id + '&key=' + apiKey_tuttle + '&fields=items(snippet(title))&part=snippet', {format: 'json', url: url}, function (data) {
+      var url = 'https://www.youtube.com/channel/' + channelID;
+      $.getJSON('https://www.googleapis.com/youtube/v3/videos?id=' + id + '&key=' + apiKey + '&fields=items(snippet(title))&part=snippet', {format: 'json', url: url}, function (data) {
         var h2s = $("h4")
         console.log(data.items)
         $(h2s[videoNumber]).html(data.items[0].snippet.title)
