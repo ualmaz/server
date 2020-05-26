@@ -5,11 +5,11 @@ var limitPerPage = 6; // Limit of items per each page
 $('#content .well:gt(' + (limitPerPage - 1) + ')').hide(); // Hide all items over page limits (e.g., 5th item, 6th item, etc.)
 var totalPages = Math.round(numberOfItems / limitPerPage); // Get number of pages
 
-$(".pagination").append("<li class='current-page active'><a class='p-3' href='javascript:void(0)'>" + 1 + "</a></li>"); // Add first page marker
+$(".pagination").append("<li class='current-page active'><a class='p-2' href='javascript:void(0)'>" + 1 + "</a></li>"); // Add first page marker
 
 // Loop to insert page number for each sets of items equal to page limit (e.g., limit of 4 with 20 total items = insert 5 pages)
 for (var i = 2; i <= totalPages; i++) {
-  $(".pagination").append("<li class='current-page'><a class='p-3' href='javascript:void(0)'>" + i + "</a></li>"); // Insert page number into pagination tabs
+  $(".pagination").append("<li class='current-page'><a class='p-2' href='javascript:void(0)'>" + i + "</a></li>"); // Insert page number into pagination tabs
 }
 
 // Add next button after all the page numbers
