@@ -1,4 +1,5 @@
 from django.urls import include, path
+from django.conf import settings
 from .views import (
     UserRegistrationView,
     PostCreateView,
@@ -41,8 +42,8 @@ urlpatterns = [
     path('calendar/<int:pk>', CalendarDetailView.as_view(), name='calendar-detail'),
     path('calendar/new/', CalendarCreateView.as_view(), name='calendar-form')
 
-
-
-
-
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
