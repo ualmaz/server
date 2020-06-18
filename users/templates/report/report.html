@@ -20,7 +20,6 @@
         <legend class="mb-4">Report Form</legend>
 
             <div class="form-row">
-
                   <div class="form-group col-md-3 mb-0">
                     <p>{{ form.area|as_crispy_field }}</p>
                   </div>
@@ -28,11 +27,9 @@
                   <div class="form-group col-md-3 mb-0">
                     <p>{{ form.country|as_crispy_field }}</p>
                   </div>
-
             </div>
 
             <div class="form-row">
-
                   <div class="form-group col-md-3 mb-0">
                     <p>{{ form.new_ministers|as_crispy_field }}</p>
                   </div>
@@ -40,10 +37,9 @@
                   <div class="form-group col-md-3 mt-4">
                   <p>{{ form.dis_course|as_crispy_field }}</p>
                   </div>
-
             </div>
-            <div class="form-row">
 
+            <div class="form-row">
                   <div class="form-group col-md-3 mb-0">
                   <p>{{ form.licenced_ministers|as_crispy_field }}</p>
                   </div>
@@ -51,23 +47,37 @@
                   <div class="form-group col-md-3 mb-0">
                   <p>{{ form.upgrade_licence|as_crispy_field }}</p>
                   </div>
-
             </div>
-            <div class="form-row">
 
+            <div class="form-row">
                   <div class="form-group col-md-3 mb-0">
                     {{ form.constituents|as_crispy_field }}
+                    {{ form.preaching_place|as_crispy_field }}
                   </div>
-
-
             </div>
-            <div class="form-row">
 
+            <div class="form-row">
                   <div class="form-group col-md-3 mb-0">
+                    {{ form.new_churches|as_crispy_field }}
+                    {{ form.water_baptism|as_crispy_field }}
+                  </div>
+            </div>
+
+            <div class="form-row">
+                  <div class="form-group col-md-3 mb-0">
+                    {{ form.holy_ghost|as_crispy_field }}
+                    {{ form.total_holy_ghost|as_crispy_field }}
+                  </div>
+            </div>
+
+
+
+            <div class="form-row">
+                  <div class="form-group col-md-3 mb-0">
+                      {{form.total_baptized|as_crispy_field}}
                     {{ form.author }}
                     <p class="text-danger">If you choose wrong name, your info will not be saved</p>
                   </div>
-
             </div>
 
 
