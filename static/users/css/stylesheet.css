@@ -658,3 +658,23 @@ p.ex {
   overflow: hidden;
   border-bottom: 1px solid #deddd9;
 }
+
+#content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  max-width: 1300px;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+
+}
+
+#content div iframe{
+  /* background: #3bbced; */
+  padding: 5px;
+
+}
+
+#content div:nth-child(even) {
+  /* background: #777; */
+  /* border: 1px solid; */
+}
