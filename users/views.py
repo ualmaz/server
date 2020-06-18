@@ -57,7 +57,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class ReportCreateView(LoginRequiredMixin, CreateView):
     model = Report
     form_class = ReportForm
-    template_name = 'users/report.html'
+    template_name = 'report/report.html'
 
 
 
