@@ -61,6 +61,8 @@
             <div class="form-row">
                   <div class="form-group col-md-3 mb-0">
                     {{ form.new_churches|as_crispy_field }}
+                  </div>
+                  <div class="form-group col-md-3 mb-0">
                     {{ form.water_baptism|as_crispy_field }}
                   </div>
             </div>
@@ -68,6 +70,8 @@
             <div class="form-row">
                   <div class="form-group col-md-3 mb-0">
                     {{ form.holy_ghost|as_crispy_field }}
+                  </div>
+                  <div class="form-group col-md-3 mb-0">
                     {{ form.total_holy_ghost|as_crispy_field }}
                   </div>
             </div>
@@ -77,7 +81,9 @@
             <div class="form-row">
                   <div class="form-group col-md-3 mb-0">
                       {{form.total_baptized|as_crispy_field}}
-                    {{ form.author }}
+                  </div>
+                  <div class="form-group col-md-3 mb-0">
+                     {{ form.author }}
                     <p class="text-danger">If you choose wrong name, your info will not be saved</p>
                   </div>
             </div>
