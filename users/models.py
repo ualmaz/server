@@ -132,7 +132,7 @@ class Report(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('users:report_list')
+        return reverse('users:report_main_page')
 
 
 class Calendar(models.Model):
