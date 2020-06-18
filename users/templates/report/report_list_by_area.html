@@ -1,0 +1,29 @@
+{% extends 'shared/base.html' %} {% load staticfiles %} {% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<h4 class="text-center m-4 p-4">See the reports</h4>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+    <div class="dropdown">
+      <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="border-radius: 0%; width: 200px;">
+        Sort by Area
+      </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      {% for area in report %}
+        <a class="dropdown-item" href="{% url 'users:report-list' area.pk%}">{{area}}</a>
+      {% endfor %}
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'shared/base.html' %} {% load staticfiles %} {% load users_ids_list %} {% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+
+<h4 class="text-center m-4 p-4">See the reports</h4>
+<div class="row">
+  <div class="col text-center">
+  <div class="dropdown">
+    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="border-radius: 0%; width: 200px;">
+      Sort by Month
+    </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    {% for d in reports_dates %}
+      <a class="dropdown-item" href="{% url 'users:report-list-sorted-by-month' d.month %}">{{d.month|month_name}}</a>
+    {% endfor %}
+  </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

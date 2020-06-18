@@ -13,10 +13,6 @@
   </div>
   {% endif %}
   <h4 class="ml-5">See the reports here</h4>
-  <div class="row">
-    <h6 class="ml-5 mt-4"><a href="{% url 'users:report_list'  %}">Sort by area</a></h6>
-    <h6 class="ml-5 mt-4"><a href="{% url 'users:report_list_by_month'  %}">Sort by month</a></h6>
-  </div>
 <div class="content-section p-4">
   <form method="POST" id="personForm" data-cities-url="{% url 'users:ajax_load_cities' %}" enctype="multipart/form-data">
    {% csrf_token %}
@@ -26,11 +22,11 @@
             <div class="form-row">
 
                   <div class="form-group col-md-3 mb-0">
-                    {{ form.area|as_crispy_field }}
+                    <p>{{ form.area|as_crispy_field }}</p>
                   </div>
 
                   <div class="form-group col-md-3 mb-0">
-                    {{ form.country|as_crispy_field }}
+                    <p>{{ form.country|as_crispy_field }}</p>
                   </div>
 
             </div>
@@ -38,44 +34,22 @@
             <div class="form-row">
 
                   <div class="form-group col-md-3 mb-0">
-                    {{ form.new_ministers|as_crispy_field }}
+                    <p>{{ form.new_ministers|as_crispy_field }}</p>
                   </div>
 
-                  <div class="form-group col-md-3 mb-0">
-                    {{ form.dis_course|as_crispy_field }}
-                  </div>
-
-            </div>
-            <div class="form-row">
-
-                  <div class="form-group col-md-3 mb-0">
-                    {{ form.licenced_ministers|as_crispy_field }}
-                  </div>
-
-                  <div class="form-group col-md-3 mb-0">
-                    {{ form.upgrade_licence|as_crispy_field }}
+                  <div class="form-group col-md-3 mt-4">
+                  <p>{{ form.dis_course|as_crispy_field }}</p>
                   </div>
 
             </div>
             <div class="form-row">
 
                   <div class="form-group col-md-3 mb-0">
-                    {{ form.preaching_place|as_crispy_field }}
+                  <p>{{ form.licenced_ministers|as_crispy_field }}</p>
                   </div>
 
                   <div class="form-group col-md-3 mb-0">
-                    {{ form.new_churches|as_crispy_field }}
-                  </div>
-
-            </div>
-            <div class="form-row">
-
-                  <div class="form-group col-md-3 mb-0">
-                    {{ form.water_baptism|as_crispy_field }}
-                  </div>
-
-                  <div class="form-group col-md-3 mb-0">
-                    {{ form.holy_ghost|as_crispy_field }}
+                  <p>{{ form.upgrade_licence|as_crispy_field }}</p>
                   </div>
 
             </div>
@@ -85,16 +59,6 @@
                     {{ form.constituents|as_crispy_field }}
                   </div>
 
-                  <div class="form-group col-md-3 mb-0">
-                    {{ form.total_holy_ghost|as_crispy_field }}
-                  </div>
-
-            </div>
-            <div class="form-row">
-
-                  <div class="form-group col-md-3 mb-0">
-                    {{ form.total_baptized|as_crispy_field }}
-                  </div>
 
             </div>
             <div class="form-row">

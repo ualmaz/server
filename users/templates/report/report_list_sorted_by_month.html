@@ -1,0 +1,63 @@
+{% extends 'shared/base.html' %} {% load staticfiles %} {% load users_ids_list %} {% block content %}
+<br />
+<br />
+
+
+<div class="container ml-4 mr-4">
+  <div class="justify-content-center align-items-center mb-4 mt-5 ml-2 pt-3">    
+    <h2>Reports sorted by month  </h2>  
+  </div>
+  <table class="table">
+  <thead class="thead-inverse">
+  <tr>
+    
+    <th style="vertical-align:top;">Country:</th>
+    <th style="vertical-align:top;">Newly Licensed Ministers</th>
+    <th style="vertical-align:top;">Upgraded Licenses?</th>
+    <th style="vertical-align:top;">Discipleship Courses:</th>
+    <th style="vertical-align:top;">Constituences:</th>
+    <th style="vertical-align:top;">Preaching places:</th>
+    <th style="vertical-align:top;">New Churches:</th>
+    <th style="vertical-align:top;">Baptized in Jesus name:</th>
+    <th style="vertical-align:top;">Received Holy Ghost:</th>
+    <th style="vertical-align:top;">Total Received Holy Ghost:</th>
+    <th style="vertical-align:top;">Total Baptized:</th>
+    <th style="vertical-align:top;">Added date:</th>
+    <th style="vertical-align:top;">Reported by:</th>
+
+    
+  </tr>
+  </thead>
+  
+  {% for report in reports %}
+  
+  <tbody>
+    
+  <tr>
+    <td>{{ report.country}}</td>
+    <td>{{ report.new_ministers}}</td>
+    <td>{{ report.upgrade_licence}}</td>
+    <td>{{ report.dis_course}}</td>
+    <td>{{ report.constituents}}</td>
+    <td>{{ report.preaching_place}}</td>
+    <td>{{ report.new_churches}}</td>
+    <td>{{ report.water_baptism}}</td>
+    <td>{{ report.holy_ghost}}</td>
+    <td>{{ report.total_holy_ghost}}</td>
+    <td>{{ report.total_baptized}}</td>
+    <td>{{ report.month}}</td>
+    <td>{{ report.author}}</td>
+    
+  </tr>
+  </tbody>
+
+  {% endfor %}
+  </table>
+  
+  
+  </div>
+
+
+               
+
+{% endblock %}

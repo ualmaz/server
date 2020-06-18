@@ -171,60 +171,59 @@ def load_cities(request):
     return render(request, 'users/city_dropdown_list_options.html', {'countries': countries})
 
 
+# #Report views
+class ReportCreateView(LoginRequiredMixin, CreateView):
+    model = Report
+    form_class = ReportForm
+    template_name = 'report/report.html'
+
+
 @login_required
-def report_view(request, pk):
-    report = Report.objects.filter(pk=pk)
-    patron = User.objects.filter(username='ualmaz')
-    author = Report.objects.get(pk=pk).author
+def report_main_page(request):
+    return render(request, 'report/report_main_page.html')
+
+
+@login_required
+def report_list(request, pk):
+    area_id = Report.objects.get(pk=pk).area
+    report = Report.objects.filter(area_id=area_id)
 
     context = {
         'report': report,
-        'patron': patron,
-        'author': author,
-
+        'area_id': area_id
     }
+    return render(request, 'report/report_list.html', context)
 
-    return render(request, 'users/report_view.html', context)
 
 @login_required
-def report_list(request):
-    areas = Report.objects.all().distinct('area')
-    # ordering = ['-date_posted']
+def report_list_sorted_by_month(request, month_number):
+    filtered_reports = Report.objects.filter(month__month=month_number)
+    reports_dates = Report.objects.dates('month', 'month')
 
     context = {
-        'areas':areas
+        'reports': filtered_reports,
+        'title': reports_dates
     }
-    return render(request, 'users/report_list.html', context)
+    return render(request, 'report/report_list_sorted_by_month.html', context)
+
+
+@login_required
+def report_list_by_area(request):
+    report = Report.objects.all().distinct('area')
+    context = {
+        'report': report
+    }
+    return render(request, 'report/report_list_by_area.html', context)
 
 
 @login_required
 def report_list_by_month(request):
-    month = Report.objects.distinct('month')
-    ordering = ['date_posted']
-
+    reports_dates = Report.objects.dates('month', 'month')
     context = {
-        'month': month
+        'reports_dates': reports_dates
     }
+    return render(request, 'report/report_list_by_month.html', context)
 
-    return render(request, 'users/report_list_by_month.html', context)
-
-
-def report_countries(request, pk):
-    countries = Report.objects.filter(id=pk)
-
-    context = {
-        'countries':countries
-    }
-    return render(request, 'users/report_countries.html', context)
-
-def report_month(request, pk):
-    month = Report.objects.filter('month')
-
-
-    context = {
-        'month': month
-    }
-    return render(request, 'users/report_month.html', context)
 
 def post_page(request):
     posts = Post.objects.filter(author=request.user)
