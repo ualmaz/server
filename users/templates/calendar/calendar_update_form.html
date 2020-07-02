@@ -1,0 +1,26 @@
+{% extends 'shared/base.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="content-section ml-5 mt-5">
+    <h3 class="mb-5">Update Event</h3>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <fieldset class="form-group">
+
+
+    <div class="form-group col-md-3 small">{{ form|crispy }}</div>
+
+
+</fieldset>
+  <div class="form-group">
+    <button style="border-radius: 0; width: 200px; padding-left: 5px;" class="btn btn-info btn-block ml-3" type="submit">Update</button>
+  </div>
+
+</form>
+
+</div>
+
+{% endblock %}

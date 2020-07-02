@@ -255,9 +255,34 @@ class CalendarCreateView(CreateView):
     form_class = CalendarForm
     template_name = 'calendar/calendar_form.html'
 
-
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
 
+class CalendarUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Calendar
+    # form_class = CalendarUpdateForm
+    template_name = 'calendar/calendar_update_form.html'
+    fields = ['title', 'link', 'date_posted', 'date_from']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        calendar = self.get_object()
+        if self.request.user == calendar.author:
+            return True
+        return False
+
+class CalendarDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Calendar
+    template_name = 'calendar/calendar_confirm_delete.html'
+    success_url = '/'
+
+    def test_func(self):
+        calendar = self.get_object()
+        if self.request.user == calendar.author:
+            return True
+        return False

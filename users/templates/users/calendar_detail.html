@@ -19,21 +19,26 @@
 </tr>
 </thead>
 
-{% for event in calendar %}
+
 <tbody>
 <tr>
-  <td>{{event.date_from}}</td>
-  <td>{{event.date_to}}</td>
-  <td><a href="{% url 'users:calendar-details' event.id %}">{{event.title}}</a></td>
+  <td>{{calendar.date_from}}</td>
+  <td>{{calendar.date_to}}</td>
+  <td>{{calendar.title}}</td>
 
-      {% if event.link %}
+      {% if calendar.link %}
         <td><a href="{{event.link}}">Learn more ..</a></td>
       {% else %}
         <td><small>No link provided</small></td>
       {% endif %}
 </tr>
 </tbody>
-{% endfor %}
+
 </table>
+
+{%  if calendar.author == user %}
+    <a style="border-radius: 0%;" class="btn btn-secondary btn-sm mt-1" href="{% url 'users:calendar_update_form' object.id %}">Update</a>
+    <a style="border-radius: 0%;" class="btn btn-danger btn-sm mt-1" href="{% url 'users:calendar_delete' object.id %}">Delete</a>
+{% endif %}
 </div>
     {% endblock %}

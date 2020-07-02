@@ -10,7 +10,9 @@ from .views import (
     ReportCreateView,
     CalendarView,
     CalendarDetailView,
-    CalendarCreateView
+    CalendarCreateView,
+    CalendarUpdateView,
+    CalendarDeleteView
 )
 from . import views
 
@@ -25,7 +27,7 @@ urlpatterns = [
     path('report_main/', views.report_main_page, name='report_main_page'),
     path('accounts/register/', UserRegistrationView.as_view(), name='register'),
     path('accounts/report/', ReportCreateView.as_view(template_name='report/report.html'), name='report'),
-    path('accounts/report_list/<int:pk>', views.report_list, name='report-list'),
+    path('accounts/report_list/<int:pk>/', views.report_list, name='report-list'),
     path('accounts/report_list_sorted_by_month/<int:month_number>', views.report_list_sorted_by_month, name='report-list-sorted-by-month'),
     path('accounts/report_list_by_area/', views.report_list_by_area, name='report_list_by_area'),
     path('accounts/report_list_by_month/', views.report_list_by_month, name='report_list_by_month'),
@@ -40,7 +42,9 @@ urlpatterns = [
     path('accounts/cabinet/post_page/', views.post_page, name='post-page'),
     path('accounts/cabinet/youtube/', views.youtube, name='youtube'),
     path('calendar/', CalendarView.as_view(), name='calendar'),
-    path('calendar/<int:pk>', CalendarDetailView.as_view(), name='calendar-detail'),
+    path('calendar/<int:pk>/update', CalendarUpdateView.as_view(), name='calendar_update_form'),
+    path('calendar/<int:pk>/delete', CalendarDeleteView.as_view(), name='calendar_delete'),
+    path('calendar/<int:pk>/', CalendarDetailView.as_view(), name='calendar-details'),
     path('calendar/new/', CalendarCreateView.as_view(), name='calendar-form')
 
 ]

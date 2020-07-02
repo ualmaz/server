@@ -1,0 +1,23 @@
+{% extends 'shared/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="content-section ml-5 mt-5">
+    <h3 class="mb-5">Delete Event</h3>
+<form method="post">
+  {% csrf_token %}
+  <fieldset class="form-group">
+    <h4>Are you sure you want to delete {{object.title}}?</h4>
+
+  </fieldset>
+  <div class="form-group">
+    <button style="border-radius: 0; width: 200px; padding-left: 5px;" class="btn btn-danger btn-block ml-3" type="submit">Delete</button>
+    <a style="border-radius: 0; width: 200px; padding-left: 5px;" class="btn btn-secondary btn-block ml-3" type="submit" href="{% url 'users:calendar-details' object.id %}">Cancel</a>
+  </div>
+
+</form>
+
+</div>
+
+{% endblock %}
