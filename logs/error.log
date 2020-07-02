@@ -478,3 +478,31 @@
 [2020-05-24 07:26:14 +0000] [959] [INFO] Booting worker with pid: 959
 [2020-05-24 07:26:14 +0000] [961] [INFO] Booting worker with pid: 961
 [2020-05-24 07:26:14 +0000] [962] [INFO] Booting worker with pid: 962
+[2020-06-18 05:36:01 +0000] [863] [INFO] Handling signal: term
+[2020-06-18 05:36:01 +0000] [962] [INFO] Worker exiting (pid: 962)
+[2020-06-18 05:36:01 +0000] [959] [INFO] Worker exiting (pid: 959)
+[2020-06-18 05:36:01 +0000] [961] [INFO] Worker exiting (pid: 961)
+[2020-06-18 05:36:02 +0000] [863] [INFO] Shutting down: Master
+[2020-06-18 05:36:37 +0000] [875] [INFO] Starting gunicorn 19.9.0
+[2020-06-18 05:36:37 +0000] [875] [INFO] Listening at: unix:/run/gunicorn/simpledjango_socket (875)
+[2020-06-18 05:36:37 +0000] [875] [INFO] Using worker: sync
+[2020-06-18 05:36:37 +0000] [973] [INFO] Booting worker with pid: 973
+[2020-06-18 05:36:37 +0000] [974] [INFO] Booting worker with pid: 974
+[2020-06-18 05:36:37 +0000] [978] [INFO] Booting worker with pid: 978
+[2020-06-18 06:32:56 +0000] [875] [INFO] Handling signal: term
+[2020-06-18 06:32:56 +0000] [973] [INFO] Worker exiting (pid: 973)
+[2020-06-18 06:32:56 +0000] [978] [INFO] Worker exiting (pid: 978)
+[2020-06-18 06:32:56 +0000] [974] [INFO] Worker exiting (pid: 974)
+[2020-06-18 06:32:56 +0000] [875] [INFO] Shutting down: Master
+[2020-06-18 06:33:22 +0000] [883] [INFO] Starting gunicorn 19.9.0
+[2020-06-18 06:33:22 +0000] [883] [INFO] Listening at: unix:/run/gunicorn/simpledjango_socket (883)
+[2020-06-18 06:33:22 +0000] [883] [INFO] Using worker: sync
+[2020-06-18 06:33:22 +0000] [978] [INFO] Booting worker with pid: 978
+[2020-06-18 06:33:22 +0000] [981] [INFO] Booting worker with pid: 981
+[2020-06-18 06:33:22 +0000] [982] [INFO] Booting worker with pid: 982
+[2020-07-02 18:45:54 +0000] [885] [INFO] Starting gunicorn 19.9.0
+[2020-07-02 18:45:54 +0000] [885] [INFO] Listening at: unix:/run/gunicorn/simpledjango_socket (885)
+[2020-07-02 18:45:54 +0000] [885] [INFO] Using worker: sync
+[2020-07-02 18:45:54 +0000] [978] [INFO] Booting worker with pid: 978
+[2020-07-02 18:45:54 +0000] [981] [INFO] Booting worker with pid: 981
+[2020-07-02 18:45:54 +0000] [984] [INFO] Booting worker with pid: 984
